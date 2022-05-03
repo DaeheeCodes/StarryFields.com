@@ -1,6 +1,6 @@
 
 import React from "react";
-import MyVideo from "/Users/dhc/StarryFields/src/LandingVid.mp4";
+import MyVideo from "/src/LandingVid.mp4";
 import { useNavigate } from "react-router-dom";
 
 
