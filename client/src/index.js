@@ -12,7 +12,8 @@ import Landing from "./pages/landing.js";
 import {render} from 'react-dom';
 
 const rootElement = document.getElementById("root");
-render(
+
+ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="home" element={<App />} />
