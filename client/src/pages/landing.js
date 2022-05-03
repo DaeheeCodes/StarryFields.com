@@ -1,6 +1,6 @@
 
 import React from "react";
-import MyVideo from "/src/LandingVid.mp4";
+//import MyVideo from "/Users/dhc/StarryFields/client/public/LandingVid.mp4";
 import { useNavigate } from "react-router-dom";
 
 
@@ -15,7 +15,7 @@ export default function Landing() {
   }
     return (
         <video width="100%" height="100%" preload="auto" onClick={routeChange} autoPlay loop muted>
-        <source src={MyVideo} type="video/mp4" />
+        <source src="/LandingVid.mp4" type="video/mp4" />
     </video>
     );
   }
