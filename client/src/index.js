@@ -9,12 +9,16 @@ import {
 } from "react-router-dom";
 import Landing from "./pages/landing.js";
 import {render} from 'react-dom';
+import Portfolio from './pages/portfolio.js';
+import Sidebar from './Sidebar';
 
 const rootElement = document.getElementById("root");
 
 render(
   <BrowserRouter>
+    <Sidebar/>
     <Routes>
+      <Route path="portfolio" element={<Portfolio />}></Route>  
       <Route path="home" element={<App />} />
       <Route exact path="/" element={<Landing />}>
     </Route>

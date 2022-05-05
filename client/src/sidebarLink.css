@@ -1,0 +1,19 @@
+.link{
+    justify-content: right;
+    display: flex;
+    align-items: cover;
+    cursor: pointer;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-width: 100%;
+    text-align: end;
+  }
+  .link:hover{
+    color: rgba(26, 180, 194, 0.5);
+    transition: color 100ms ease-out;
+  }
+  .link > h2{
+    font-weight: 700;
+    font-size: 20px;
+    margin-right: 3%;
+  }
