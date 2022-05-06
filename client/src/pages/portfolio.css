@@ -1,4 +1,5 @@
-
+/* separate CSS to give blur effect on main page only 
+*/
 
 .container {
     display: flex;
@@ -27,4 +28,3 @@
   height: 102vh;
     filter: blur(10px);
   }
-

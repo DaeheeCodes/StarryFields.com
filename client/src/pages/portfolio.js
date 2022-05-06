@@ -1,13 +1,14 @@
-import { Grid } from '@material-ui/core';
 import React from 'react';
 import "./portfolio.css"
+import Home from "./home.js"
 
 function Portfolio() {
     return (
-            <div className="portfolio">
-                <div className='appcontainer'>
-                </div>
+        <div className="background-image container portfolio">
+            <div className='content'>
+                <Home />
             </div>
+        </div>
         );
 }
 

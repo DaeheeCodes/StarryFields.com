@@ -10,23 +10,30 @@ import {
 import Landing from "./pages/landing.js";
 import {render} from 'react-dom';
 import Portfolio from './pages/portfolio.js';
-import Sidebar from './Sidebar';
+import OutsideSidebar from './OutsideSidebar.js';
+import InsideSidebar from './InsideSidebar.js';
 
 const rootElement = document.getElementById("root");
 
+/* 
+Uses React Router v6 Outlet to declare pages inside and outside of Sidebar.
+Outlet refers back to the child element put at the end.
+So <SideBar /> <Outlet /> becomes <SideBar /> - <Route/>..
+*/
+
 render(
   <BrowserRouter>
-    <Sidebar/>
     <Routes>
-      <Route path="portfolio" element={<Portfolio />}></Route>  
-      <Route path="home" element={<App />} />
-      <Route exact path="/" element={<Landing />}>
+      <Route element={<OutsideSidebar />}>
+            <Route exact path="/" element={<Landing />}/>
+      </Route>  
+      <Route element={<InsideSidebar />}>
+          <Route path="home" element={<App />} />
+          <Route path="portfolio" element={<Portfolio />}/>
     </Route>
     </Routes>
   </BrowserRouter>,
   rootElement
 );
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

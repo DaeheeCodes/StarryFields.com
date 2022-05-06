@@ -11,11 +11,12 @@
     padding: 10px 10px;
     box-shadow: 0 0 0.7px white;
     background-color: transparent;
-    position: absolute;
+    position:fixed;
     color: beige;
     background-image: url(./background.jpg);
     background-size: cover;
     background-position: top;
+    float: left;
   }
 
   .title {
@@ -23,4 +24,3 @@
       padding-left: 10px;
       padding-top: 10px;
   }
-

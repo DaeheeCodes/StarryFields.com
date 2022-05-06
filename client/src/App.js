@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
-import Home from "./pages/home.js";
-import Sidebar from "./Sidebar.js";
-import background from "./background.jpg"
+import Home from "./pages/home";
+/*
+left the boilerplate useEffect just in case
+*/
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -14,9 +15,11 @@ function App() {
   }, []);
 
   return (
-      <div className="background-image">
-      <Sidebar/>
+    <div className="background">
+      <div className="content">
+          <Home />
       </div>
+    </div>  
   );
 }
 

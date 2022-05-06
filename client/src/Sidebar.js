@@ -4,6 +4,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";  
 import styled from "styled-components";
 
+//style-components used to apply styles directly to the U
 const NavUnlisted = styled.ul `
 @font-face {
     font-family: repet;
@@ -28,7 +29,7 @@ const NavUnlisted = styled.ul `
 `
 
 
-
+//NavLink is used to support styling options that Link does not support
 function Sidebar(){
   return(
     <div className="sidebar">
