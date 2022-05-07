@@ -12,7 +12,6 @@ import {render} from 'react-dom';
 import Portfolio from './pages/portfolio.js';
 import OutsideSidebar from './OutsideSidebar.js';
 import InsideSidebar from './InsideSidebar.js';
-
 const rootElement = document.getElementById("root");
 
 /* 
@@ -35,5 +34,9 @@ render(
   </BrowserRouter>,
   rootElement
 );
+
+/*
+ each page is built separately reference /pages for each page
+*/
 
 reportWebVitals();

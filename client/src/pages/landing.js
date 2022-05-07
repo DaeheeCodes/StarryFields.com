@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 
 
-
 export default function Landing() {
     let navigate = useNavigate(); 
   const routeChange = () =>{ 
@@ -14,8 +13,8 @@ export default function Landing() {
     navigate(path);
   }
     return (
-        <video width="100%" height="100%" preload="auto" onClick={routeChange} autoPlay loop muted>
-        <source src="/LandingVid.mp4" type="video/mp4" />
+        <video width="100%" height="100%" preload="auto" style={{objectFit: 'fill'}} onClick={routeChange} autoPlay loop muted>
+          <source src="/LandingVid.mp4" type="video/mp4" />
     </video>
     );
   }

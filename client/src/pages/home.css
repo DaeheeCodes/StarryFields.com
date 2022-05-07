@@ -2,3 +2,21 @@
     font-family: star;
     src: url(starfont.ttf);
 }
+
+.gridbox {
+    color: #ccad67;
+    font-family: star;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.project {
+    font-size: 35px;
+    text-indent: 20%;
+}
+
+.vidtitle {
+    font-size: 12px;
+    color: white;
+    text-indent: 8%;
+}

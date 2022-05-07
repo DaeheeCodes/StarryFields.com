@@ -3,6 +3,9 @@
     src: url(repet.ttf);
 }
 
+.status {
+    color: yellowgreen;
+}
 
 .sidebar{
     font-family: repet;
@@ -19,10 +22,11 @@
   }
 
   .title {
-      overflow: auto;
+      overflow: hidden;
       padding-left: 0px;
       padding-top: 10px;
   }
+
 
   .icon{
     justify-content: center;
@@ -31,7 +35,6 @@
     cursor: pointer;
     padding-top: 18px;
     padding-bottom: 18px;
-    max-width: 130%;
     text-align:center;
   }
 
@@ -39,6 +42,7 @@
     color: rgba(26, 180, 194, 0.5);
     transition: color 100ms ease-out;
   }
+
 
   @media only screen and (max-width: 420px) {
     .sidebar {
@@ -52,6 +56,9 @@
       width: 10vh;
       box-shadow: 0 0 0.7px white;
     }
+    .extended .icon {
+        display: block;
+    }
   }
 
   @media only screen and (min-width: 420px) {
@@ -59,3 +66,4 @@
       display: block;
     }
   }
+

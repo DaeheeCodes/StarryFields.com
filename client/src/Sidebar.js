@@ -10,7 +10,9 @@ import LogoDevIcon from '@mui/icons-material/LogoDev';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import {useState} from "react";
 import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
-//style-components used to apply styles directly to the U
+
+//transcription bug where some css components dont get inheritted. using style component for readability rather than in-line.
+
 const NavUnlisted = styled.ul `
 @font-face {
     font-family: repet;
@@ -22,6 +24,7 @@ const NavUnlisted = styled.ul `
       display: none;
     }
   }
+
 
 .sidebar{
     font-family: repet;
@@ -36,20 +39,31 @@ const NavUnlisted = styled.ul `
     background-size: cover;
     background-position: top;
   }
+
+.navIcon:hover {
+    color: rgba(26, 180, 194, 0.5);
+    transition: color 100ms ease-out;
+    cursor: pointer;
+}
+
 `
 
 //NavLink is used to support styling options that Link does not support
 function Sidebar(){
-    const [sideBarExpanded, setExpanded] = useState(false)
+    const [sidebarExpanded, setExpanded] = useState(false)
 
   return(
-    <div className="sidebar">
+    <div className={sidebarExpanded ? "sidebar" : "sidebar extended"}>
         <h1 className="title">Starry Fields</h1>
-            <NavUnlisted>
+            <NavUnlisted > 
+                <CompareArrowsRoundedIcon className="navIcon" onClick={() => {
+          setExpanded(!sidebarExpanded);
+        }}/>
+                <h4 className="status">{(sidebarExpanded.toString())}</h4>
                 <NavLink to="/home" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact >
                     <SidebarLink className="link" text="Home" /> <BungalowIcon className ="icon"  />
                 </NavLink>
-                <NavLink to="./pages/portfolio.js" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
+                <NavLink to="/about" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="About Us"/> <GroupIcon className ="icon" />
                 </NavLink>
                 <NavLink to="./pages/portfolio.js" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
