@@ -1,10 +1,12 @@
+
+
 .link{
     justify-content: right;
     display: flex;
     align-items: cover;
     cursor: pointer;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     max-width: 100%;
     text-align: end;
   }
@@ -16,4 +18,16 @@
     font-weight: 700;
     font-size: 20px;
     margin-right: 3%;
+  }
+
+  @media only screen and (max-width: 420px) {
+    .linktext {
+      display: none;
+    }
+  }
+
+  @media only screen and (min-width: 420px) {
+    .icon {
+      display: block;
+    }
   }

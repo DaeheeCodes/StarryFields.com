@@ -6,12 +6,11 @@
 
 .sidebar{
     font-family: repet;
-    width: 10%;
     height: 100%;
     padding: 10px 10px;
     box-shadow: 0 0 0.7px white;
     background-color: transparent;
-    position:fixed;
+    position:absolute;
     color: beige;
     background-image: url(./background.jpg);
     background-size: cover;
@@ -20,7 +19,43 @@
   }
 
   .title {
-      overflow: hidden;
-      padding-left: 10px;
+      overflow: auto;
+      padding-left: 0px;
       padding-top: 10px;
+  }
+
+  .icon{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    max-width: 130%;
+    text-align:center;
+  }
+
+  .icon:hover{
+    color: rgba(26, 180, 194, 0.5);
+    transition: color 100ms ease-out;
+  }
+
+  @media only screen and (max-width: 420px) {
+    .sidebar {
+      width: 8vh;
+      box-shadow: 0 0 0.7px white;
+    }
+  }
+
+  @media only screen and (min-width: 420px) {
+    .sidebar {
+      width: 10vh;
+      box-shadow: 0 0 0.7px white;
+    }
+  }
+
+  @media only screen and (min-width: 420px) {
+    .icon {
+      display: block;
+    }
   }
