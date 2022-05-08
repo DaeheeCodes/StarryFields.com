@@ -26,3 +26,13 @@ p {
     margin-top: 0%;
     margin-bottom: 0%;
 }
+
+.iconcontainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 87.5%;
+    margin-top: -21.5%;
+    gap: 30px;
+}

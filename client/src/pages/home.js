@@ -33,7 +33,8 @@ const vidcontainer ={
 
 
 const textbody = {
-    mb: '5%',
+    mt: '5%',
+    mb: '7%',
     fontFamily: "streetBold",
     color: '#efd9ce',
 }
@@ -69,12 +70,12 @@ function Home () {
         </Grid>
         <Grid item xs={17} sx={{...vidcontainer}}>
       <p className="project">Past Project</p>
-      <Link className="vidtitle" href="https://pauloboy.itch.io/factory-reset" underline="always" target="_blank"> {`Factory Reset - as part of Game Jam`} </Link>
+      <Link className="vidtitle" href="https://pauloboy.itch.io/factory-reset" underline="hover" target="_blank"> {`Factory Reset - as part of Game Jam`} </Link>
             <CardMedia component="iframe" image={"https://www.youtube.com/embed/2f2lblfm0fo"} autoplay control sx={{ height: '30vh', width: '35vw'}}/>
         </Grid>
         <Grid item xs={17} sx={{...vidcontainer}}>
         <p className="currentproject" >Current Project</p>
-        <Link className="vidtitle" href="https://github.com/RevDev-Studios" underline="hover" target="_blank"> {`Wind Walker - In Development`} </Link>
+        <Link className="vidtitle" href="https://github.com/RevDev-Studios" underline="hover" target="_blank" > {`Wind Walker - In Development`} </Link>
             <CardMedia component="iframe" image={"https://www.youtube.com/embed/qbc_xPeVLtg"} autoplay control sx={{ height: '30vh', width: '35vw'}} />
         </Grid>
         <Grid item xs={8}>

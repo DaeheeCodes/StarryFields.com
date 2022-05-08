@@ -27,7 +27,7 @@ render(
       <Route element={<OutsideSidebar />}>
             <Route exact path="/" element={<Landing />}/>
       </Route>  
-      <Route element={<InsideSidebar />}>
+      <Route element={<InsideSidebar />} className="contents">
           <Route path="home" element={<App />} />
           <Route path="about" element={<About />}/>
           <Route path="portfolio" element={<Portfolio />}/>
