@@ -5,20 +5,21 @@ import { Box } from "@mui/material";
 import '../assets.css'
 import Grid from '@mui/material/Grid'
 import Avatar from '@mui/material/Avatar'
+import { display } from "@mui/system";
 
 /*regular css expressions do not inherit to mui components,  
 added spearate style component for better readability than inline sx styling
 */
 
 
-const container ={
-    ml: "14vw"
+const container={
+    mt: '1%',
+    ml: '12%',
+    display: 'flex',
 }
 
-
-
 const profilecontainer={
-    mt: "",
+    mt: "5%",
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -57,26 +58,32 @@ function About () {
 
   return (
     <div className="gridbox">
-            <Grid container spacing={0} columns={40} sx={{...container}} >
-        <Grid item sm={20} xs={40} sx={{...profilecontainer}}>
+            <Grid container spacing={0} columns={40} sx={{...container}}  >
+        <Grid item xl={16} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}>
             <Avatar alt="Paul An" src="/static/images/avatar/1.jpg" sx={{...avatarcard}}/>
             </Box>
         </Grid>
-        <Grid item sm={20} xs={40} sx={{...profilecontainer}}>
+        <Grid item xl={16} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}>
             <Avatar alt="Paul An" src="/static/images/avatar/1.jpg" sx={{...avatarcard}}/>
             </Box>
         </Grid>
-        <Grid item sm={20} xs={40} sx={{...profilecontainer}}>
+        <Grid item xl={8}>
+            <p></p>
+        </Grid>
+        <Grid item xl={16} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}>
             <Avatar alt="Paul An" src="/static/images/avatar/1.jpg" sx={{...avatarcard}}/>
             </Box>
         </Grid>
-        <Grid item xs={20} sx={{...profilecontainer}}>
+        <Grid item xl={16} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}>
-                <Avatar alt="Paul An" src="/static/images/avatar/1.jpg" sx={{...avatarcard}}/>
+            <Avatar alt="Paul An" src="/static/images/avatar/1.jpg" sx={{...avatarcard}}/>
             </Box>
+        </Grid>
+        <Grid item xl={8}>
+            <p></p>
         </Grid>
         </Grid>
     </div>

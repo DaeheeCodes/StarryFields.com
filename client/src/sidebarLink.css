@@ -5,8 +5,6 @@
     display: flex;
     align-items: cover;
     cursor: pointer;
-    padding-top: 18px;
-    padding-bottom: 18px;
     max-width: 100%;
     text-align: end;
   }

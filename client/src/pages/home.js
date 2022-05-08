@@ -10,7 +10,7 @@ added spearate style component for better readability than inline sx styling
 
 const container ={
     ml: "6%",
-    mt: "-4%"
+    mt: "0%"
 }
 
 const titlestyle = {
@@ -23,7 +23,7 @@ const titlestyle = {
 };
 
 const vidcontainer ={
-    mt: "",
+    mt: "1.5%",
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -73,7 +73,7 @@ function Home () {
             <CardMedia component="iframe" image={"https://www.youtube.com/embed/2f2lblfm0fo"} autoplay control sx={{ height: '30vh', width: '35vw'}}/>
         </Grid>
         <Grid item xs={17} sx={{...vidcontainer}}>
-        <p className="project" >Current Project</p>
+        <p className="currentproject" >Current Project</p>
         <Link className="vidtitle" href="https://github.com/RevDev-Studios" underline="hover" target="_blank"> {`Wind Walker - In Development`} </Link>
             <CardMedia component="iframe" image={"https://www.youtube.com/embed/qbc_xPeVLtg"} autoplay control sx={{ height: '30vh', width: '35vw'}} />
         </Grid>

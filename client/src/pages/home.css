@@ -6,7 +6,6 @@
 
 
 .gridbox {
-    height: 100%;
     color: #ccad67;
     font-family: star;
     overflow-x: hidden;
@@ -15,7 +14,7 @@
 
 .project {
     font-size: 35px;
-    text-indent: 20%;
+    text-indent: 12%;
     font-family: 'streetBold';
     color: #f8f4f2;
 }
@@ -34,4 +33,11 @@
     font-family: 'streetBold';
     color: #f8f4f2;
     margin-left: -5%;
+}
+
+.currentproject {
+    font-size: 35px;
+    text-indent: 10%;
+    font-family: 'streetBold';
+    color: #f8f4f2;
 }

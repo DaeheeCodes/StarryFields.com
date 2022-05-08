@@ -30,6 +30,12 @@ const NavUnlisted = styled.ul `
   }
 }
 
+@media only screen and (min-width: 500px) {
+  .sidebar {
+    width: 7%;
+    max-width: 120px;
+    box-shadow: 0 0 0.7px white;
+  }
 
   .extended .icon {
      visibility: hidden;
@@ -42,20 +48,6 @@ const NavUnlisted = styled.ul `
   }
 }
 
-.sidebar{
-    display: flex;
-    font-family: repet;
-    width: 9%;
-    height: 100%;
-    padding: 10px 10px;
-    box-shadow: 0 0 1px white;
-    background-color: transparent;
-    position: absolute;
-    color: beige;
-    background-image: url(./background.jpg);
-    background-size: cover;
-    background-position: top;
-  }
 
 .navIcon:hover {
     color: rgba(26, 180, 194, 0.5);
