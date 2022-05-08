@@ -2,17 +2,20 @@ import * as React from "react";
 import Grid from '@mui/material/Grid';
 import "./home.css"
 import CardMedia from '@mui/material/CardMedia';
+import '../assets.css'
+import {Link} from '@mui/material';
 /*regular css expressions do not inherit to mui components,  
 added spearate style component for better readability than inline sx styling
 */
 
 const container ={
-    ml: "10vw"
+    ml: "6%",
+    mt: "-4%"
 }
 
 const titlestyle = {
     fontFamily: "star",
-    color: '#F5F5DC',
+    color: '#efd9ce',
     fontSize: '70px',
     float: "right",
     mt: "3%",
@@ -25,8 +28,16 @@ const vidcontainer ={
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '15px', 
-    color: 'beige',
+    fontFamily: "streetBold",
 }
+
+
+const textbody = {
+    mb: '5%',
+    fontFamily: "streetBold",
+    color: '#efd9ce',
+}
+
 
 
 function Home () {
@@ -45,7 +56,7 @@ function Home () {
         <Grid item xs={8}>
             <p></p>
         </Grid>
-        <Grid item xs={24} sx={{mb: "3%"}}>
+        <Grid item xs={24} sx={{...textbody}}>
             <p>
             We are a team of friends with a shared dream of being the best in Software Engineering and Graphic Design. Follow our journey here and see what we have brewing!
             </p>
@@ -56,17 +67,17 @@ function Home () {
         <Grid item xs={0}>
             <p></p>
         </Grid>
-        <Grid item xs={20} sx={{vidcontainer}}>
+        <Grid item xs={17} sx={{...vidcontainer}}>
       <p className="project">Past Project</p>
-        <p className="vidtitle">Factory Reset</p>
+      <Link className="vidtitle" href="https://pauloboy.itch.io/factory-reset" underline="always" target="_blank"> {`Factory Reset - as part of Game Jam`} </Link>
             <CardMedia component="iframe" image={"https://www.youtube.com/embed/2f2lblfm0fo"} autoplay control sx={{ height: '30vh', width: '35vw'}}/>
         </Grid>
-        <Grid item xs={17} sx={{vidcontainer}}>
-        <p className="project">Current Project</p>
-        <p className="vidtitle">Wind Walker</p>
+        <Grid item xs={17} sx={{...vidcontainer}}>
+        <p className="project" >Current Project</p>
+        <Link className="vidtitle" href="https://github.com/RevDev-Studios" underline="hover" target="_blank"> {`Wind Walker - In Development`} </Link>
             <CardMedia component="iframe" image={"https://www.youtube.com/embed/qbc_xPeVLtg"} autoplay control sx={{ height: '30vh', width: '35vw'}} />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={8}>
             <p></p>
         </Grid>
         </Grid>

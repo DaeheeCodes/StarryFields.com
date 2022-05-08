@@ -1,0 +1,4 @@
+@font-face { font-family: repet; font-weight: bold; src: url('./fonts/repet.ttf');}
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital@1&family=Roboto:wght@300&display=swap');
+@font-face { font-family: streetBold; font-weight: bold; src: url('./fonts/YdestreetB.ttf');}
+@font-face { font-family: streetReg; font-weight:lighter; src: url('./fonts/YdestreetL.ttf');}

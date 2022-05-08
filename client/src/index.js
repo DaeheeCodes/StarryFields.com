@@ -12,6 +12,7 @@ import {render} from 'react-dom';
 import Portfolio from './pages/portfolio.js';
 import OutsideSidebar from './OutsideSidebar.js';
 import InsideSidebar from './InsideSidebar.js';
+import About from './pages/about.js'
 const rootElement = document.getElementById("root");
 
 /* 
@@ -28,6 +29,7 @@ render(
       </Route>  
       <Route element={<InsideSidebar />}>
           <Route path="home" element={<App />} />
+          <Route path="about" element={<About />}/>
           <Route path="portfolio" element={<Portfolio />}/>
     </Route>
     </Routes>

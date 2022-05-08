@@ -1,6 +1,6 @@
 @font-face {
     font-family: repet;
-    src: url(repet.ttf);
+    src: url(./fonts/repet.ttf);
 }
 
 .status {
@@ -13,11 +13,11 @@
     padding: 10px 10px;
     box-shadow: 0 0 0.7px white;
     background-color: transparent;
-    position:absolute;
+    position:relative;
     color: beige;
     background-image: url(./background.jpg);
     background-size: cover;
-    background-position: top;
+    background-position: bottom;
     float: left;
   }
 
@@ -29,6 +29,7 @@
 
 
   .icon{
+    margin-left: -7vw;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -44,26 +45,31 @@
   }
 
 
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 500px) {
     .sidebar {
-      width: 8vh;
+      width: 7%;
       box-shadow: 0 0 0.7px white;
+    }
+
+    .link {
+      display: none;
     }
   }
 
-  @media only screen and (min-width: 420px) {
+  @media only screen and (min-width: 500px) {
     .sidebar {
-      width: 10vh;
+      width: 7%;
       box-shadow: 0 0 0.7px white;
     }
+
     .extended .icon {
-        display: block;
+       visibility: hidden;
     }
   }
 
-  @media only screen and (min-width: 420px) {
+  @media only screen and (min-width: 500px) {
     .icon {
-      display: block;
+      display: none;
     }
   }
 

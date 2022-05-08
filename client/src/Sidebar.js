@@ -19,14 +19,31 @@ const NavUnlisted = styled.ul `
     src: url(repet.ttf);
 }
 
-@media only screen and (min-width: 420px) {
-    .icon {
-      display: none;
-    }
+@media only screen and (max-width: 500px) {
+  .sidebar {
+    width: 7%;
+    box-shadow: 0 0 0.7px white;
   }
 
+  .link {
+    display: none;
+  }
+}
+
+
+  .extended .icon {
+     visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .icon {
+    display: block;
+  }
+}
 
 .sidebar{
+    display: flex;
     font-family: repet;
     width: 9%;
     height: 100%;
@@ -80,3 +97,10 @@ function Sidebar(){
   );
 }
 export default Sidebar;
+
+/*
+@media only screen and (min-width: 450px) {
+    .icon {
+      display: none;
+    }
+  }*/
