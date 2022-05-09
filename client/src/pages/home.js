@@ -9,7 +9,7 @@ added spearate style component for better readability than inline sx styling
 */
 
 const container ={
-    ml: "6%",
+    ml: "12%",
     mt: "0%"
 }
 
@@ -35,7 +35,7 @@ const vidcontainer ={
 const textbody = {
     mt: '5%',
     mb: '7%',
-    fontFamily: "streetBold",
+    fontFamily: "star",
     color: '#efd9ce',
 }
 

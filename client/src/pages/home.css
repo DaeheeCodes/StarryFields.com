@@ -10,13 +10,15 @@
     font-family: star;
     overflow-x: hidden;
     overflow-y: auto;
+    height: 100%;
+    position: absolute;
 }
 
 .project {
-    font-size: 30px;
+    font-size: 20px;
     text-indent: 12%;
-    font-family: 'streetBold';
-    color: #f8f4f2;
+    font-family: 'star';
+    color: #efd9ce;
 }
 
 
@@ -26,7 +28,6 @@
     color: white;
     text-indent: 8%;
     font-family: 'streetBold';
-    text-decoration: none
 };
 
 .projects {
@@ -37,8 +38,8 @@
 }
 
 .currentproject {
-    font-size: 30px;
+    font-size: 20px;
     text-indent: 10%;
-    font-family: 'streetBold';
-    color: #f8f4f2;
+    font-family: 'star';
+    color: #efd9ce;
 }

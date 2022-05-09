@@ -5,7 +5,7 @@ import { Box, Card } from "@mui/material";
 import '../assets.css'
 import Grid from '@mui/material/Grid'
 import Avatar from '@mui/material/Avatar'
-import { display } from "@mui/system";
+import { bgcolor, display, fontWeight, height } from "@mui/system";
 import TexasFlag from '../photos/texasflag.jpeg'
 import Gary from '../photos/garyfong.jpeg'
 import KoreanFlag from '../photos/koreanflag.jpeg'
@@ -19,12 +19,12 @@ added spearate style component for better readability than inline sx styling
 */
 
 const container={
-    mt: '4%',
-    ml: '10%',
+    mt: '0%',
+    ml: '14%',
     display: 'flex',
     width: '100vw',
     height: '100vh',
-    overflow: 'scroll',
+    overflow: 'hidden',
 }
 
 const profilecontainer={
@@ -33,30 +33,28 @@ const profilecontainer={
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '15px', 
-    fontFamily: "streetBold",
-    mr: "3%"
-    
+    fontFamily: "streetBold",    
 }
 
 const profilecard={
     mt: '15%',
     width: '400px',
     height: '230px',
-    bgcolor: '#ffffff99',
+    bgcolor: 'white',
     opacity: '5px',
     borderRadius: '50px',
     zIndex: '-3',
-    boxShadow: 'rgb(38, 57, 77) 0px 20px 30px -10px'
+    boxShadow: 'rgb(38, 57, 77) 0px 20px 30px -10px',
 }
 
 const avatarcard={
     position: 'relative',
-    width: '200px',
-    height: '200px',
+    width: '180px',
+    height: '180px',
     zIndex: '0',
     ml: '13%',
     top: '-150%',
-    boxShadow: 'rgb(38, 57, 77) 0px 20px 30px -10px',
+    boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)',
 }
 
 const clippedcard={
@@ -97,7 +95,20 @@ const clippedcardtexan={
     backgroundSize: 'contain',
 }
 
+const namecontainer={
+ fontSize:'30px',
+ textIndent: '15%',
+ color:'black',
+ fontWeight: 'bolder',
+}
 
+const aboutme={
+    ml: '10%',
+    mt: '-12%',
+    mb: '5%',
+    width: '300px',
+    height: '40px',
+}
 
 
 
@@ -111,12 +122,12 @@ function About () {
   return (
     <div className="gridbox">
             <Grid container spacing={0} columns={40} sx={{...container}}  >
-        <Grid item xl={16} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
+        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
             <Box className="jobdesc" >
             <p >Full Stack Web Developer</p>
-            <p >Website Manager</p>
+            <p >Site Manager</p>
             <Box className="iconcontainer">
                 <Avatar sx={{ bgcolor: '#541388'}}>
                     <GitHubIcon />
@@ -128,18 +139,24 @@ function About () {
                     <EmailIcon />
                 </Avatar>
             </Box>
+            <Box sx={{...aboutme}}>
+                <p>Started coding in April of 2022, currently looking for a job!</p>
+            </Box>
+            </Box>
+            <Box sx={{...namecontainer}}>
+                <p>Daehee Hwang</p>
             </Box>
             </Box>
         </Grid>
-        <Grid item xl={16} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
+        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}} />
             <Avatar alt="Paul An" src="/static/images/avatar/1.jpg" sx={{...avatarcard}}/>
             </Box>
         </Grid>
-        <Grid item xl={8}>
+        <Grid item xl={12} lg={8} sm={0} xs={0}>
             <p></p>
         </Grid>
-        <Grid item xl={16} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
+        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcardtexan}} ></Box>
             <Avatar elevation={5} alt="Gary Fong" src={`${Gary}`} sx={{...avatarcard}}/>
             <Box className="jobdesc" >
@@ -159,7 +176,7 @@ function About () {
             </Box>
             </Box>
         </Grid>
-        <Grid item xl={16} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
+        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcardtexan}} ></Box>
             <Avatar elevation={5} alt="Gary Fong" src={`${Gary}`} sx={{...avatarcard}}/>
             <Box className="jobdesc" >
@@ -179,7 +196,7 @@ function About () {
             </Box>
             </Box>
         </Grid>
-        <Grid item xl={8}>
+        <Grid Grid item xl={12} lg={8} sm={0} xs={0}>
             <p></p>
         </Grid>
         </Grid>

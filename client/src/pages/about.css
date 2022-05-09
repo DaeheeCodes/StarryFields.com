@@ -4,6 +4,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital@1&family=Inconsolata:wght@300;600&family=Roboto:wght@300&display=swap');
 
+
 .jobdesc {
     border:none;
     background-image:none;
@@ -19,11 +20,12 @@
     text-align: center;
     font-family: 'Inconsolata', monospace;
     font-weight: bolder;
-    font-size: 17px;
+    font-size: 12px;
+    font-style: italic;
 }
 
 p {
-    margin-top: 0%;
+    margin-top: -0%;
     margin-bottom: 0%;
 }
 
@@ -35,4 +37,9 @@ p {
     margin-left: 87.5%;
     margin-top: -21.5%;
     gap: 30px;
+}
+
+.name {
+    text-indent: -30%;
+    font-size: 25px;
 }

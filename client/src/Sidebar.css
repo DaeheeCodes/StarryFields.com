@@ -17,13 +17,13 @@
     padding: 10px 10px;
     box-shadow: 0 0 0.7px white;
     background-color: transparent;
-    position:relative;
+    position:absolute;
     color: beige;
     background-image: url(./background.jpg);
     background-size: cover;
     background-position: bottom;
-    float: left;
-  }
+    z-index: 1600;
+}
 
   .title {
       overflow: hidden;
