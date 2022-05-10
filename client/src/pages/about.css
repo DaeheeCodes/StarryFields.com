@@ -39,6 +39,10 @@ p {
     gap: 30px;
 }
 
+.iconcontainer:hover {
+    cursor: pointer;
+}
+
 .name {
     text-indent: -30%;
     font-size: 25px;

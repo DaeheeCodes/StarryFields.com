@@ -23,7 +23,7 @@ const Containersmall= {
     mt: '20%',
     ml: '18%',
     width:'70%',
-    aspectRatio: '3/5',
+    aspectRatio: '3/4',
     backgroundColor: 'white',
     borderRadius: '30px',
     justifyContent: 'center',
@@ -53,11 +53,22 @@ const Textfield ={
 }
 
 const Buttons={
-    backgroundColor: 'pink'
+    backgroundColor: '#9a8c98',
+    color: 'black'
 }
 
 const Logocontainer={
-    backgroundColor: 'beige'
+    position: 'fixed',
+
+}
+
+const Logobox={
+    width: '200px',
+    fontFamily: 'repet',
+    fontSize: '100px',
+    color: '#9a8c98',
+    ml: '425px',
+    mt: '200px',
 }
 function ContactUs () {
 
@@ -65,10 +76,10 @@ function ContactUs () {
     return (
         <div className="container" >
             <Grid columns={20} container direction={"row"} sx={{...Containerlarge, display: { xs: 'none', sm: 'none', md: 'block' }}} >
-                <Grid item md={10} sx={{...Logocontainer}}></Grid>    
+                <Grid item md={10} sx={{...Logocontainer}}><Box sx={{...Logobox}}>Starry Fields</Box></Grid>    
                 <Grid item md={10}> 
                     <Grid sx={{...Title}}>Contact Us</Grid>
-                    <Grid sx={{...Desc}}>Please use this form to make a general inquiry to the team. If you want to contact a specific member of our team you can find their email on our About Us page!</Grid>
+                    <Grid sx={{...Desc}}>Please use this form to make a general inquiry to the team. If you wish to contact a specific member of our team you can find their email on our About Us page!</Grid>
                         <Box component="form" sx={{...Form}}>
                             <Grid container direction={"column"} spacing={3}>
                             <Grid item>   

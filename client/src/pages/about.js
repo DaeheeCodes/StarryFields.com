@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./about.css"
 import CardMedia from '@mui/material/CardMedia';
-import { Box, Card } from "@mui/material";
+import { Box, Card, Icon } from "@mui/material";
 import '../assets.css'
 import Grid from '@mui/material/Grid'
 import Avatar from '@mui/material/Avatar'
@@ -14,6 +14,7 @@ import '../assets.css'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
+import { ImportContactsSharp } from "@material-ui/icons";
 /*regular css expressions do not inherit to mui components,  
 added spearate style component for better readability than inline sx styling
 */
@@ -110,6 +111,11 @@ const aboutme={
     height: '40px',
 }
 
+const Icons={
+    ':hover': {
+        cursor: 'pointer'
+    }
+}
 
 
 function About () {
@@ -163,14 +169,14 @@ function About () {
             <p >Full Stack Texan</p>
             <p >YEEHAW!</p>
             <Box className="iconcontainer">
-                <Avatar sx={{ bgcolor: '#541388'}}>
+                <Avatar sx={{...Icons, bgcolor: '#541388'}}>
                     <GitHubIcon />
                     </Avatar>
-                    <Avatar sx={{ bgcolor: '#51AE7E'}}>
+                    <Avatar sx={{...Icons, bgcolor: '#51AE7E'}}>
                     <LinkedInIcon />
                     </Avatar>
-                    <Avatar sx={{ bgcolor: '#AE5181'}}>
-                    <EmailIcon />
+                    <Avatar sx={{...Icons, bgcolor: '#AE5181'}}>
+                    <EmailIcon onClick={() => {navigator.clipboard.writeText("<empty clipboard>").then(alert('Email Saved to Clipboard!'))}}/>
                 </Avatar>
             </Box>
             </Box>
