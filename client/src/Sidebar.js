@@ -75,13 +75,13 @@ function Sidebar(){
                 <NavLink to="/about" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="About Us"/> <GroupIcon className ="icon" />
                 </NavLink>
-                <NavLink to="./pages/portfolio.js" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
+                <NavLink to="/devNotes" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Dev Notes" /> <LibraryBooksIcon className ="icon" />
                 </NavLink>
                 <NavLink to="/portfolio" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Daehee's Portfolio"/> <LogoDevIcon className ="icon" />
                 </NavLink>
-                <NavLink to="./pages/portfolio.js" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
+                <NavLink to="/contactUs" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Contact Us" /> <DraftsIcon className ="icon" />
                 </NavLink>
             </NavUnlisted>

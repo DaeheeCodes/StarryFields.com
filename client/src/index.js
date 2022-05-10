@@ -12,8 +12,11 @@ import {render} from 'react-dom';
 import Portfolio from './pages/portfolio.js';
 import OutsideSidebar from './OutsideSidebar.js';
 import InsideSidebar from './InsideSidebar.js';
-import About from './pages/about.js'
-const rootElement = document.getElementById("root");
+import About from './pages/about.js';
+import Devnotes from './pages/devnotes.js';
+import ContactUs from './pages/contactus.js';
+
+const rootElement = document.getElementById("root")
 
 /* 
 Uses React Router v6 Outlet to declare pages inside and outside of Sidebar.
@@ -30,7 +33,9 @@ render(
       <Route element={<InsideSidebar />} className="contents">
           <Route path="home" element={<App />} />
           <Route path="about" element={<About />}/>
+          <Route path="devNotes" element={<Devnotes /> }/>
           <Route path="portfolio" element={<Portfolio />}/>
+          <Route path="contactUs" element={<ContactUs /> }/>
     </Route>
     </Routes>
   </BrowserRouter>,
