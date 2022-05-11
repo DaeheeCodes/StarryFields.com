@@ -24,6 +24,7 @@ const titlestyle = {
 
 const vidcontainer ={
     mt: "1.5%",
+    ml: "2%",
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -71,12 +72,12 @@ function Home () {
         <Grid tem xl={17} lg={17} sm={40} xs={40} sx={{...vidcontainer}}>
       <p className="project">Past Project</p>
       <Link className="vidtitle" href="https://pauloboy.itch.io/factory-reset" underline="hover" target="_blank"> {`Factory Reset - as part of Game Jam`} </Link>
-            <CardMedia style={{ border: "solid beige", boxShadow: "none" }} component="iframe" image={"https://www.youtube.com/embed/2f2lblfm0fo"} autoplay control sx={{ height: '30vh', width: '33vw'}}/>
+            <CardMedia style={{ border: "solid beige", boxShadow: "none", minWidth:'270px' }} component="iframe" image={"https://www.youtube.com/embed/2f2lblfm0fo"} autoplay control sx={{ height: '30vh', width: '33vw'}}/>
         </Grid>
         <Grid item xl={17} lg={17} sm={40} xs={40} sx={{...vidcontainer}}>
         <p className="currentproject" >Current Project</p>
         <Link className="vidtitle" href="https://github.com/RevDev-Studios" underline="hover" target="_blank" > {`Wind Walker - In Development`} </Link>
-            <CardMedia style={{ border: "solid beige", boxShadow: "none" }} component="iframe" image={"https://www.youtube.com/embed/qbc_xPeVLtg"} autoplay control sx={{ height: '30vh', width: '33vw'}} />
+            <CardMedia style={{ minWidth:'270px', border: "solid beige", boxShadow: "none", aspectRatio: '16/9', }} component="iframe" image={"https://www.youtube.com/embed/qbc_xPeVLtg"} autoplay control sx={{ height: '30vh', width: '33vw'}} />
         </Grid>
         <Grid item xs={8}>
             <p></p>

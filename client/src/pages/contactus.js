@@ -76,14 +76,14 @@ const Logobox={
 
 function ContactUs (props) {
 
-    const [mailerState, setMailerState] = useState ({
+    const [mailState, setMailState] = useState ({
         name: '',
         email: '',
         subject: '',
         message: '',
     });
     const handleStateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setMailerState((prevState)=> ({
+        setMailState((prevState)=> ({
             ...prevState,
             [event.target.name]: event.target.value,
         }));
@@ -104,14 +104,15 @@ function ContactUs (props) {
 // last then function just resets the state to empty. which is read at 'value' down in our MUI container
     const submitEmail = async (e) => {
         e.preventDefault();
-        console.log({mailerState});
+        console.log({mailState});
         await fetch("http://localhost:3001/send", {
             method: 'POST',
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify({mailerState}),
+            body: JSON.stringify({mailState}),
         })
+            .then((res)=> res.json())
             .then(async (res) => {
                 const resData = await res;
                 console.log(resData);
@@ -121,9 +122,8 @@ function ContactUs (props) {
                 alert("Message failed to send");
                 }
             })
-            .then((res)=> res.json())
             .then(() => {
-                setMailerState({
+                setMailState({
                     name: "",
                     email: "",
                     subject: "",
@@ -141,16 +141,16 @@ function ContactUs (props) {
                         <Box component="form" sx={{...Form}} onSubmit={submitEmail}>
                             <Grid container direction={"column"} spacing={2}>
                             <Grid item>   
-                            <TextField label="Full Name" inputProps={{minLength: 3, maxLenght:20}} fullWidth required onChange={handleStateChange} name="name" evalue={mailerState.name}/>
+                            <TextField label="Full Name" inputProps={{minLength: 3, maxLenght:20}} fullWidth required onChange={handleStateChange} name="name" evalue={mailState.name}/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Email" value={mailerState.email} type='email' onChange={handleStateChange} fullWidth required name="email"/>
+                            <TextField label="Email" value={mailState.email} type='email' onChange={handleStateChange} fullWidth required name="email"/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Subject" value={mailerState.subject} onChange={handleStateChange} fullWidth required name="subject"/>
+                            <TextField label="Subject" value={mailState.subject} onChange={handleStateChange} fullWidth required name="subject"/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Message" value={mailerState.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleStateChange} required name="message"/>
+                            <TextField label="Message" value={mailState.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleStateChange} required name="message"/>
                             </Grid>
                             </Grid>
                                 <Box><Button type="submit" sx={{...Buttons}}>SUBMIT</Button></Box>

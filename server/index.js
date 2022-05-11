@@ -7,22 +7,23 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const nodemailerSendgrid = require('nodemailer-sendgrid');
 
-
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.use(cors({
-  origin: '*'
-}));
+var corsOptions = {
+  origin: "http://localhost:3001",
+  origin: "http://localhost:3000"
+};
 
+app.use(cors(corsOptions));
 app.use(express.json())
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 // Handle GET requests to /api route
-app.get("/api", (req, res) => {
+app.get("/api", (req, res) => { 
   res.json({ message: "Hello from server!" });
 });
 
@@ -34,7 +35,7 @@ app.get('*', (req, res) => {
 
 
 //we use setAPIKey already at the top but below is needed to run the transport module
-let transporter = nodemailer.createTransport({
+/*let transporter = nodemailer.createTransport({
   host: 'smtp.sendgrid.net',
   port: 587,
   auth: {
@@ -46,30 +47,49 @@ let transporter = nodemailer.createTransport({
    transporter.verify((err, success) => {
     err
       ? console.log(err)
-      : console.log(`=== Server is ready to take messages: ${success} ===`);
+      : console.log('Server is ready to take messages');
    });
-   
-   app.post("/send", function (req, res) {
-    let mailOptions = {
-      from: `${req.body.mailerState.email}`,
-      to: process.env.EMAIL,
-      subject: `Message from: ${req.body.mailerState.email}`,
-      text: `${req.body.mailerState.message}`,
-    };
-   
-    transporter.sendMail(mailOptions, function (err, data) {
+       sgMail.send(mailOptions, function (err, data) {
       if (err) {
         res.json({
           status: "fail",
         });
       } else {
-        console.log("== Message Sent ==");
+        console.log("Message Sent");
         res.json({
           status: "success",
         });
       }
     });
    });
+
+*/
+
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+console.log(process.env.SENDGRID_API_KEY)
+   
+   app.post("/send", function (req, res) {
+    let mailOptions = {
+      from: `admin@starryfields.com`,
+      to: 'daeheeCodes@gmail.com',
+      subject: `Message from: ${req.body.mailState.email}`,
+      text: `${req.body.mailState.message}`,
+      html: `${req.body.mailState.message}`,
+    }
+    sgMail.send(mailOptions)
+      .then(() => {
+          console.log("Message Sent");
+          res.json({
+            status: "success",
+          })})
+      .catch ((error) => {
+        console.error(error)
+        res.json({
+          status: "fail",
+        })
+      })
+    })
 
    app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);

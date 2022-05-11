@@ -8,7 +8,8 @@ import GroupIcon from '@mui/icons-material/Group';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import LogoDevIcon from '@mui/icons-material/LogoDev';
 import DraftsIcon from '@mui/icons-material/Drafts';
-import {useState} from "react";
+import ConstructionIcon from '@mui/icons-material/Construction';
+import HomeIcon from '@mui/icons-material/Home';import {useState} from "react";
 import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
 
 //transcription bug where some css components dont get inheritted. using style component for readability rather than in-line.
@@ -37,12 +38,12 @@ const NavUnlisted = styled.ul `
     box-shadow: 0 0 0.7px white;
   }
 
-  .extended .icon {
+  .icon {
      visibility: hidden;
   }
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (max-width: 500px) {
   .icon {
     display: block;
   }
@@ -59,18 +60,13 @@ const NavUnlisted = styled.ul `
 
 //NavLink is used to support styling options that Link does not support
 function Sidebar(){
-    const [sidebarExpanded, setExpanded] = useState(false)
 
   return(
-    <div className={sidebarExpanded ? "sidebar" : "sidebar extended"}>
+    <div className={'sidebar'}>
         <h1 className="title">Starry Fields</h1>
             <NavUnlisted > 
-                <CompareArrowsRoundedIcon className="navIcon" onClick={() => {
-          setExpanded(!sidebarExpanded);
-        }}/>
-                <h4 className="status">{(sidebarExpanded.toString())}</h4>
                 <NavLink to="/home" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact >
-                    <SidebarLink className="link" text="Home" /> <BungalowIcon className ="icon"  />
+                    <SidebarLink className="link" text="Home" /> <HomeIcon className ="icon"  />
                 </NavLink>
                 <NavLink to="/about" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="About Us"/> <GroupIcon className ="icon" />
@@ -78,11 +74,11 @@ function Sidebar(){
                 <NavLink to="/devNotes" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Dev Notes" /> <LibraryBooksIcon className ="icon" />
                 </NavLink>
-                <NavLink to="/portfolio" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
-                    <SidebarLink className="link" text="Daehee's Portfolio"/> <LogoDevIcon className ="icon" />
-                </NavLink>
                 <NavLink to="/contactUs" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Contact Us" /> <DraftsIcon className ="icon" />
+                </NavLink>
+                <NavLink to="/credits" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
+                    <SidebarLink className="link" text="Credits"/> <ConstructionIcon className ="icon" />
                 </NavLink>
             </NavUnlisted>
     </div>
@@ -96,3 +92,10 @@ export default Sidebar;
       display: none;
     }
   }*/
+
+  /*     const [sidebarExpanded, setExpanded] = useState(false)
+
+  return(
+    <div className={sidebarExpanded ? "sidebar" : "sidebar extended"}>
+
+    */
