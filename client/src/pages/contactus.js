@@ -112,11 +112,20 @@ function ContactUs (props) {
             },
             body: JSON.stringify({mailerState}),
         })
+            .then(async (res) => {
+                const resData = await res;
+                console.log(resData);
+                if (resData.status === "success") {
+                alert("Message Sent");
+                } else if (resData.status === "fail") {
+                alert("Message failed to send");
+                }
+            })
             .then((res)=> res.json())
             .then(() => {
                 setMailerState({
-                    email: "",
                     name: "",
+                    email: "",
                     subject: "",
                     message: "",
                 });
