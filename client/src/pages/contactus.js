@@ -122,19 +122,19 @@ function ContactUs (props) {
                 <Grid item md={10}> 
                     <Grid sx={{...Title}}>Contact Us</Grid>
                     <Grid sx={{...Desc}}>Please use this form to make a general inquiry to the team. If you wish to contact a specific member of our team you can find their email on our About Us page!</Grid>
-                        <Box component="form" sx={{...Form}} onSubmit={{submitEmail}}>
+                        <Box component="form" sx={{...Form}} onSubmit={submitEmail}>
                             <Grid container direction={"column"} spacing={2}>
                             <Grid item>   
-                            <TextField label="Full Name" value={state.name} inputProps={{minLength: 3, maxLenght:20}} onChange={{handleChange}}   fullWidth required/>
+                            <TextField label="Full Name" inputProps={{minLength: 3, maxLenght:20}} fullWidth required onChange={handleChange} defaultValue={state.name}/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Email" value={state.email} type='email' onChange={{handleChange}} fullWidth required/>
+                            <TextField label="Email" defaultValue={state.email} type='email' onChange={handleChange} fullWidth required/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Subject" value={state.subject} onChange={{handleChange}} fullWidth required/>
+                            <TextField label="Subject" defaultValue={state.subject} onChange={handleChange} fullWidth required/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Message" value={state.message} fullWidth multiline rows={6} autocomplete="none" onChange={{handleChange}}    required/>
+                            <TextField label="Message" defaultValue={state.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleChange} required/>
                             </Grid>
                             </Grid>
                                 <Box><Button type="submit" sx={{...Buttons}}>SUBMIT</Button></Box>
