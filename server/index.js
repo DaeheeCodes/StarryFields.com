@@ -5,6 +5,11 @@ const sendGridMail = require('@sendgrid/mail');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
 sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
 const nodemailer = require('nodemailer');
+const cors = require('cors');
+
+app.use(cors({
+  origin: '*'
+}));
 
 const PORT = process.env.PORT || 3001;
 
