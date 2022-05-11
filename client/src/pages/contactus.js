@@ -76,38 +76,45 @@ const Logobox={
 
 function ContactUs (props) {
 
-    const [mailState, setState] = useState ({
+    const [mailerState, setMailerState] = useState ({
         name: '',
         email: '',
         subject: '',
         message: '',
     });
-
+    const handleStateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setMailerState((prevState)=> ({
+            ...prevState,
+            [event.target.name]: event.target.value,
+        }));
+    }
+    
 //react cannot use this.state so we use set state call back function. state read to useState[0] while setState reads to useState[1], call back functions useState and setState is both like this.state = X
 // we basically now have two classes one is the const original 'state' second is the setState that the callback functions work off of.
-    function handleChange (e) {
+    
+/* function handleChange (e) {
         setState((prevState)=> ({
             ...prevState,
             [e.target.name]: e.target.value,
         }));
     }
-
+*/
 // async function waits for event to run through the function before executing then functions. 
 // data needs to be submitted as json between servers - server 'res(response)' is sent through POST on local server 3001/send and is read at index.js - our node server controller,
 // last then function just resets the state to empty. which is read at 'value' down in our MUI container
     const submitEmail = async (e) => {
         e.preventDefault();
-        console.log({mailState});
+        console.log({mailerState});
         await fetch("http://localhost:3001/send", {
             method: 'POST',
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify({mailState}),
+            body: JSON.stringify({mailerState}),
         })
             .then((res)=> res.json())
             .then(() => {
-                setState({
+                setMailerState({
                     email: "",
                     name: "",
                     subject: "",
@@ -125,16 +132,16 @@ function ContactUs (props) {
                         <Box component="form" sx={{...Form}} onSubmit={submitEmail}>
                             <Grid container direction={"column"} spacing={2}>
                             <Grid item>   
-                            <TextField label="Full Name" inputProps={{minLength: 3, maxLenght:20}} fullWidth required onChange={handleChange} defaultValue={mailState.name}/>
+                            <TextField label="Full Name" inputProps={{minLength: 3, maxLenght:20}} fullWidth required onChange={handleStateChange} name="name" evalue={mailerState.name}/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Email" defaultValue={mailState.email} type='email' onChange={handleChange} fullWidth required/>
+                            <TextField label="Email" value={mailerState.email} type='email' onChange={handleStateChange} fullWidth required name="email"/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Subject" defaultValue={mailState.subject} onChange={handleChange} fullWidth required/>
+                            <TextField label="Subject" value={mailerState.subject} onChange={handleStateChange} fullWidth required name="subject"/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Message" defaultValue={mailState.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleChange} required/>
+                            <TextField label="Message" value={mailerState.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleStateChange} required name="message"/>
                             </Grid>
                             </Grid>
                                 <Box><Button type="submit" sx={{...Buttons}}>SUBMIT</Button></Box>
@@ -150,10 +157,10 @@ function ContactUs (props) {
                             <TextField label="Full Name" inputProps={{minLength: 3, maxLenght:20}} fullWidth required/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Email" type='email'fullWidth required/>
+                            <TextField label="Email" type='email'fullWidth required name="email"/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Message" fullWidth multiline rows={6} autocomplete="none" required/>
+                            <TextField label="Message" fullWidth multiline rows={6} autocomplete="none" required name="message"/>
                             </Grid>
                             </Grid>
                                 <Box><ReCAPTCHA sitekey="6LcbXNkfAAAAAMGgjYBqijekZOXdTX_odekoKyw3"/><Button type="submit" sx={{...Buttons}}>Submit</Button></Box>
