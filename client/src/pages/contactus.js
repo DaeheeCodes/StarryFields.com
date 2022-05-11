@@ -76,7 +76,7 @@ const Logobox={
 
 function ContactUs (props) {
 
-    const [state, setState] = useState ({
+    const [mailState, setState] = useState ({
         name: '',
         email: '',
         subject: '',
@@ -97,13 +97,13 @@ function ContactUs (props) {
 // last then function just resets the state to empty. which is read at 'value' down in our MUI container
     const submitEmail = async (e) => {
         e.preventDefault();
-        console.log({state});
+        console.log({mailState});
         await fetch("http://localhost:3001/send", {
             method: 'POST',
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify({state}),
+            body: JSON.stringify({mailState}),
         })
             .then((res)=> res.json())
             .then(() => {
@@ -125,16 +125,16 @@ function ContactUs (props) {
                         <Box component="form" sx={{...Form}} onSubmit={submitEmail}>
                             <Grid container direction={"column"} spacing={2}>
                             <Grid item>   
-                            <TextField label="Full Name" inputProps={{minLength: 3, maxLenght:20}} fullWidth required onChange={handleChange} defaultValue={state.name}/>
+                            <TextField label="Full Name" inputProps={{minLength: 3, maxLenght:20}} fullWidth required onChange={handleChange} defaultValue={mailState.name}/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Email" defaultValue={state.email} type='email' onChange={handleChange} fullWidth required/>
+                            <TextField label="Email" defaultValue={mailState.email} type='email' onChange={handleChange} fullWidth required/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Subject" defaultValue={state.subject} onChange={handleChange} fullWidth required/>
+                            <TextField label="Subject" defaultValue={mailState.subject} onChange={handleChange} fullWidth required/>
                             </Grid>
                             <Grid item>
-                            <TextField label="Message" defaultValue={state.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleChange} required/>
+                            <TextField label="Message" defaultValue={mailState.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleChange} required/>
                             </Grid>
                             </Grid>
                                 <Box><Button type="submit" sx={{...Buttons}}>SUBMIT</Button></Box>

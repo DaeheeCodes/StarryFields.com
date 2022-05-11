@@ -3,17 +3,16 @@ const path = require('path');
 require('dotenv').config()
 const sendGridMail = require('@sendgrid/mail');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
-sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-
-app.use(cors({
-  origin: '*'
-}));
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
+app.use(cors({
+  origin: '*'
+}));
 
 app.use(express.json())
 
@@ -35,25 +34,36 @@ app.listen(PORT, () => {
 });
 
 //we use setAPIKey already at the top but below is needed to run the transport module
-
-const transporter = nodemailer.createTransport(sendGridTransport({
+let transporter = nodemailer.createTransport(sendGridTransport({
   auth:{
-  api_key: `${(process.env.SENDGRID_API_KEY)}`
+  api_key: `${process.env.SENDGRID_API_KEY}`
   }
   }));
 
-  app.post('/send', (req, res) => {
-    const { name, email, message, subject } = req.body
-    transporter.sendMail({
-      to: 'admin@starryfields.com',
-      from: email,
-      subject: subject,
-      html: `<h5>${name}</h5>
-      <p>${message}</p>` })
-      .then (resp => {
-        res.json({resp})
-      })
-      .cath(err => {
-        console.log(err)
-      })
+   transporter.verify((err, success) => {
+    err
+      ? console.log(err)
+      : console.log(`=== Server is ready to take messages: ${success} ===`);
+   });
+   
+   app.post("/send", function (req, res) {
+    let mailOptions = {
+      from: `${req.body.mailState.email}`,
+      to: process.env.EMAIL,
+      subject: `Message from: ${req.body.mailState.email}`,
+      text: `${req.body.mailState.message}`,
+    };
+   
+    transporter.sendMail(mailOptions, function (err, data) {
+      if (err) {
+        res.json({
+          status: "fail",
+        });
+      } else {
+        console.log("== Message Sent ==");
+        res.json({
+          status: "success",
+        });
+      }
     });
+   });
