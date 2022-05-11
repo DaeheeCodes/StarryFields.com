@@ -34,13 +34,16 @@ app.get('*', (req, res) => {
 
 
 //we use setAPIKey already at the top but below is needed to run the transport module
-const transport = nodemailer.createTransport(
-  nodemailerSendgrid({
-      apiKey: process.env.SENDGRID_API_KEY
-  })
-);
+let transporter = nodemailer.createTransport({
+  host: 'smtp.sendgrid.net',
+  port: 587,
+  auth: {
+      user: "apikey",
+      pass: process.env.SENDGRID_API_KEY
+  }
+})
 
-   transport.verify((err, success) => {
+   transporter.verify((err, success) => {
     err
       ? console.log(err)
       : console.log(`=== Server is ready to take messages: ${success} ===`);
@@ -54,7 +57,7 @@ const transport = nodemailer.createTransport(
       text: `${req.body.mailerState.message}`,
     };
    
-    transport.sendMail(mailOptions, function (err, data) {
+    transporter.sendMail(mailOptions, function (err, data) {
       if (err) {
         res.json({
           status: "fail",
@@ -67,6 +70,18 @@ const transport = nodemailer.createTransport(
       }
     });
    });
+
    app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
   });
+
+/*
+  app.post("/send", function (req, res) {
+    let mailOptions = {
+      from: `${req.body.mailerState.email}`,
+      to: process.env.EMAIL,
+      subject: `Message from: ${req.body.mailerState.email}`,
+      text: `${req.body.mailerState.message}`,
+    };
+
+    */
