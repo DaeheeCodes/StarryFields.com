@@ -5,10 +5,7 @@ const sendGridMail = require('@sendgrid/mail');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const nodemailerSendgrid = require('nodemailer-sendgrid');
-
-const PORT = process.env.PORT || 3001;
-
+const db = require("./mongo/models");
 const app = express();
 
 var corsOptions = {
@@ -16,8 +13,13 @@ var corsOptions = {
   origin: "http://localhost:3000"
 };
 
+const PORT = process.env.PORT || 3001;
+
 app.use(cors(corsOptions));
+//parse option for mailer and mongo
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
@@ -33,37 +35,6 @@ app.get('*', (req, res) => {
 });
 
 
-
-//we use setAPIKey already at the top but below is needed to run the transport module
-/*let transporter = nodemailer.createTransport({
-  host: 'smtp.sendgrid.net',
-  port: 587,
-  auth: {
-      user: "apikey",
-      pass: process.env.SENDGRID_API_KEY
-  }
-})
-
-   transporter.verify((err, success) => {
-    err
-      ? console.log(err)
-      : console.log('Server is ready to take messages');
-   });
-       sgMail.send(mailOptions, function (err, data) {
-      if (err) {
-        res.json({
-          status: "fail",
-        });
-      } else {
-        console.log("Message Sent");
-        res.json({
-          status: "success",
-        });
-      }
-    });
-   });
-
-*/
 
 const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
@@ -95,13 +66,4 @@ console.log(process.env.SENDGRID_API_KEY)
     console.log(`Server listening on ${PORT}`);
   });
 
-/*
-  app.post("/send", function (req, res) {
-    let mailOptions = {
-      from: `${req.body.mailerState.email}`,
-      to: process.env.EMAIL,
-      subject: `Message from: ${req.body.mailerState.email}`,
-      text: `${req.body.mailerState.message}`,
-    };
 
-    */

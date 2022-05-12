@@ -34,13 +34,15 @@ const profilecontainer={
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '15px', 
-    fontFamily: "streetBold",    
+    fontFamily: "streetBold",     
+    mb: '70px'
 }
 
 const profilecard={
-    mt: '15%',
-    width: '400px',
-    height: '230px',
+    mt: '0%',
+    mb: '-20%',
+    width: '300px',
+    height: '200px',
     bgcolor: 'white',
     opacity: '5px',
     borderRadius: '50px',
@@ -50,19 +52,33 @@ const profilecard={
 
 const avatarcard={
     position: 'relative',
-    width: '180px',
-    height: '180px',
+    width: '100px',
+    height: '100px',
     zIndex: '0',
-    ml: '13%',
-    top: '-150%',
+    ml: '-1%',
+    top: '-101%',
     boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)',
+    borderStyle: 'inset',
+    borderColor: '#2a9d8f'
+}
+
+const avatarcardbot={
+    position: 'relative',
+    width: '100px',
+    height: '100px',
+    zIndex: '0',
+    ml: '-1%',
+    top: '-117%',
+    boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)',
+    borderStyle: 'inset',
+    borderColor: '#2a9d8f'
 }
 
 const clippedcard={
     posittion: 'absolute',
     overflow: 'hidden',
     width: '410px',
-    height: '232px',
+    height: '23px',
     bgcolor: 'blue',
     zIndex: '-4',
     clipPath: 'polygon(79% 0, 100% 0%, 100% 100%, 79% 100%)',
@@ -74,9 +90,10 @@ const clippedcard={
 const clippedcardkorean={
     posittion: 'absolute',
     overflow: 'hidden',
-    width: '401px',
-    height: '231px',
-    backgroundImage: `url(${KoreanFlag})`,
+    width: '301px',
+    height: '201px',
+    bgcolor: '#2a9d8f',
+    //backgroundImage: `url(${KoreanFlag})`,
     zIndex: '-4',
     clipPath: 'polygon(80% 0, 100% 0%, 100% 100%, 80% 100%)',
     borderRadius: '48px',
@@ -97,17 +114,19 @@ const clippedcardtexan={
 }
 
 const namecontainer={
- fontSize:'30px',
+ fontSize:'25px',
  textIndent: '15%',
  color:'black',
  fontWeight: 'bolder',
+ mt: '-10%',
+ ml: '2%',
 }
 
 const aboutme={
-    ml: '10%',
-    mt: '-12%',
-    mb: '5%',
-    width: '300px',
+    ml: '-15.5%',
+    mt: '-22%',
+    mb: '13%',
+    width: '250px',
     height: '40px',
 }
 
@@ -131,17 +150,18 @@ function About () {
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
-            <Box className="jobdesc" >
-            <p >Full Stack Web Developer</p>
+            <Box className="jobdesc" sx={{}}>
+            <p >Full Stack-</p>
+            <p >Web Developer</p>
             <p >Site Manager</p>
             <Box className="iconcontainer">
-                <Avatar sx={{ bgcolor: '#541388'}}>
+                <Avatar sx={{ bgcolor: '#14213d'}}>
                     <GitHubIcon />
                     </Avatar>
-                    <Avatar sx={{ bgcolor: '#51AE7E'}}>
+                    <Avatar sx={{ bgcolor: '#0072b1'}}>
                     <LinkedInIcon />
                     </Avatar>
-                    <Avatar sx={{ bgcolor: '#AE5181'}}>
+                    <Avatar sx={{ bgcolor: '#f72585'}}>
                     <EmailIcon />
                 </Avatar>
             </Box>
@@ -155,50 +175,83 @@ function About () {
             </Box>
         </Grid>
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}} />
-            <Avatar alt="Paul An" src="/static/images/avatar/1.jpg" sx={{...avatarcard}}/>
-            </Box>
-        </Grid>
-        <Grid item xl={12} lg={8} sm={0} xs={0}>
-            <p></p>
-        </Grid>
-        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcardtexan}} ></Box>
-            <Avatar elevation={5} alt="Gary Fong" src={`${Gary}`} sx={{...avatarcard}}/>
-            <Box className="jobdesc" >
-            <p >Full Stack Texan</p>
-            <p >YEEHAW!</p>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
+            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
+            <Box className="jobdesc" sx={{}}>
+            <p >Full Stack-</p>
+            <p >Web Developer</p>
+            <p >Site Manager</p>
             <Box className="iconcontainer">
-                <Avatar sx={{...Icons, bgcolor: '#541388'}}>
+                <Avatar sx={{ bgcolor: '#14213d'}}>
                     <GitHubIcon />
                     </Avatar>
-                    <Avatar sx={{...Icons, bgcolor: '#51AE7E'}}>
+                    <Avatar sx={{ bgcolor: '#0072b1'}}>
                     <LinkedInIcon />
                     </Avatar>
-                    <Avatar sx={{...Icons, bgcolor: '#AE5181'}}>
-                    <EmailIcon onClick={() => {navigator.clipboard.writeText("<empty clipboard>").then(alert('Email Saved to Clipboard!'))}}/>
-                </Avatar>
-            </Box>
-            </Box>
-            </Box>
-        </Grid>
-        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcardtexan}} ></Box>
-            <Avatar elevation={5} alt="Gary Fong" src={`${Gary}`} sx={{...avatarcard}}/>
-            <Box className="jobdesc" >
-            <p >Full Stack Texan</p>
-            <p >YEEHAW!</p>
-            <Box className="iconcontainer">
-                <Avatar sx={{ bgcolor: '#541388'}}>
-                    <GitHubIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#51AE7E'}}>
-                    <LinkedInIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#AE5181'}}>
+                    <Avatar sx={{ bgcolor: '#f72585'}}>
                     <EmailIcon />
                 </Avatar>
             </Box>
+            <Box sx={{...aboutme}}>
+                <p>Started coding in April of 2022, currently looking for a job!</p>
+            </Box>
+            </Box>
+            <Box sx={{...namecontainer}}>
+                <p>Daehee Hwang</p>
+            </Box>
+            </Box>
+        </Grid>
+        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
+            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
+            <Box className="jobdesc" sx={{}}>
+            <p >Full Stack-</p>
+            <p >Web Developer</p>
+            <p >Site Manager</p>
+            <Box className="iconcontainer">
+                <Avatar sx={{ bgcolor: '#14213d'}}>
+                    <GitHubIcon />
+                    </Avatar>
+                    <Avatar sx={{ bgcolor: '#0072b1'}}>
+                    <LinkedInIcon />
+                    </Avatar>
+                    <Avatar sx={{ bgcolor: '#f72585'}}>
+                    <EmailIcon />
+                </Avatar>
+            </Box>
+            <Box sx={{...aboutme}}>
+                <p>Started coding in April of 2022, currently looking for a job!</p>
+            </Box>
+            </Box>
+            <Box sx={{...namecontainer}}>
+                <p>Daehee Hwang</p>
+            </Box>
+            </Box>
+        </Grid>
+        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
+            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
+            <Box className="jobdesc" sx={{}}>
+            <p >Full Stack-</p>
+            <p >Web Developer</p>
+            <p >Site Manager</p>
+            <Box className="iconcontainer">
+                <Avatar sx={{ bgcolor: '#14213d'}}>
+                    <GitHubIcon />
+                    </Avatar>
+                    <Avatar sx={{ bgcolor: '#0072b1'}}>
+                    <LinkedInIcon />
+                    </Avatar>
+                    <Avatar sx={{ bgcolor: '#f72585'}}>
+                    <EmailIcon />
+                </Avatar>
+            </Box>
+            <Box sx={{...aboutme}}>
+                <p>Started coding in April of 2022, currently looking for a job!</p>
+            </Box>
+            </Box>
+            <Box sx={{...namecontainer}}>
+                <p>Daehee Hwang</p>
             </Box>
             </Box>
         </Grid>
