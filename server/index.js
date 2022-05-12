@@ -5,7 +5,6 @@ const sendGridMail = require('@sendgrid/mail');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const db = require("./mongo/models");
 const app = express();
 
 var corsOptions = {
@@ -65,5 +64,3 @@ console.log(process.env.SENDGRID_API_KEY)
    app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
   });
-
-
