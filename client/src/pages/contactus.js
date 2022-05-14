@@ -5,7 +5,6 @@ import '../assets.css';
 import Grid from '@mui/material/Grid'
 import './contactus.css';
 import Button from '@mui/material/Button';
-import ReCAPTCHA from 'react-google-recaptcha';
 import { useState } from "react";
 
 const Containerlarge ={
@@ -153,7 +152,7 @@ function ContactUs (props) {
                             <TextField label="Message" value={mailState.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleStateChange} required name="message"/>
                             </Grid>
                             </Grid>
-                                <Box><ReCAPTCHA sitekey="6LcbXNkfAAAAAMGgjYBqijekZOXdTX_odekoKyw3"/><Button type="submit" sx={{...Buttons}}>SUBMIT</Button></Box>
+                                <Box><Button type="submit" sx={{...Buttons}}>SUBMIT</Button></Box>
                         </Box>
                 </Grid>   
             </Grid>
@@ -172,7 +171,7 @@ function ContactUs (props) {
                             <TextField label="Message" fullWidth multiline rows={6} autocomplete="none" required name="message"/>
                             </Grid>
                             </Grid>
-                                <Box><ReCAPTCHA sitekey="6LcbXNkfAAAAAMGgjYBqijekZOXdTX_odekoKyw3"/><Button type="submit" sx={{...Buttons}}>Submit</Button></Box>
+                                <Box><Button type="submit" sx={{...Buttons}}>Submit</Button></Box>
                         </Box>
             </Grid>
         </div>
@@ -181,3 +180,5 @@ function ContactUs (props) {
 
 export default ContactUs
 
+//<ReCAPTCHA sitekey="6LcbXNkfAAAAAMGgjYBqijekZOXdTX_odekoKyw3"/>
+//import ReCAPTCHA from 'react-google-recaptcha';

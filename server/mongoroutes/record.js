@@ -19,6 +19,7 @@ recordRoutes.route("/record").get(function (req, res) {
    .find({})
    .toArray(function (err, result) {
      if (err) throw err;
+     console.log(result)
      res.json(result);
    });
 });

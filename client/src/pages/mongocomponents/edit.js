@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
-import { DateTimePicker } from '@mui/x-date-pickers'
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers'
 
 export default function Edit() {
  const [form, setForm] = useState({
@@ -18,7 +15,7 @@ export default function Edit() {
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
-     const response = await fetch(`http://localhost:3001/record/${params.id.toString()}`);
+     const response = await fetch(`/record/${params.id.toString()}`);
  
      if (!response.ok) {
        const message = `An error has occurred: ${response.statusText}`;
@@ -59,7 +56,7 @@ export default function Edit() {
    };
  
    // This will send a post request to update the data in the database.
-   await fetch(`http://localhost:3001/update/${params.id}`, {
+   await fetch(`/update/${params.id}`, {
      method: "POST",
      body: JSON.stringify(editedPost),
      headers: {
@@ -88,7 +85,7 @@ export default function Edit() {
       <div className="formContainer">
           <label htmlFor="photo">Photo URL</label>
           <input
-            type="url"
+            type="text"
             className="formSubmitter"
             id="photo"
             value={form.photo}
@@ -106,15 +103,15 @@ export default function Edit() {
           />
         </div>
         <div className="formContainer">
-        <LocalizationProvider dateAdapter={AdapterDateFns} htmlFor="date">
-             <DateTimePicker
-                 label="DateTimePicker"
-                 value={form.date}
-                 onChange={(e) => updateForm({ date: e.target.value })}
-                 className="formSubmitter"
-             />
-         </LocalizationProvider>
-        </div>
+         <label htmlFor="date">Date</label>
+         <input
+           type="date"
+           className="formSubmitter"
+           id="date"
+           value={form.date}
+           onChange={(e) => updateForm({ date: e.target.value })}
+         />
+       </div>
         <div className="formContainer">
           <label htmlFor="content">Content</label>
           <input

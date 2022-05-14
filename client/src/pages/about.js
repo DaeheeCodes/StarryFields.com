@@ -20,10 +20,10 @@ added spearate style component for better readability than inline sx styling
 */
 
 const container={
-    mt: '0%',
-    ml: '14%',
+    mt: '3%',
+    ml: '17%',
     display: 'flex',
-    width: '100vw',
+    width: '75vw',
     height: '100vh',
     overflow: 'hidden',
 }
@@ -35,7 +35,7 @@ const profilecontainer={
     alignItems: 'center',
     fontSize: '15px', 
     fontFamily: "streetBold",     
-    mb: '70px'
+    mb: '70px',
 }
 
 const profilecard={
