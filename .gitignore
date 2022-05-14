@@ -2,3 +2,4 @@
 sendgrid.env
 .env
 /server/config.env
+config.env

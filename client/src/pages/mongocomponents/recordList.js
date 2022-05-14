@@ -3,16 +3,14 @@ import { Link } from "react-router-dom";
  
 const Record = (props) => (
  <tr>
-   <td>{props.record.postnumber}</td>
-   <td>{props.record.photo}</td>
-   <td>{props.record.title}</td>
-   <td>{props.record.date}</td>
-   <td>{props.record.content}</td>
+   <td>{props.record.name}</td>
+   <td>{props.record.position}</td>
+   <td>{props.record.level}</td>
    <td>
-     <Link className="editButton" to={`/edit/${props.record.postnumber}`}>Edit</Link> |
-     <button className="editButton"
+     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
+     <button className="btn btn-link"
        onClick={() => {
-         props.deleteRecord(props.record.postnumber);
+         props.deleteRecord(props.record._id);
        }}
      >
        Delete
@@ -60,7 +58,7 @@ export default function RecordList() {
      return (
        <Record
          record={record}
-         deleteRecord={() => deleteRecord(record.postnumber)}
+         deleteRecord={() => deleteRecord(record._id)}
          key={record._id}
        />
      );
@@ -71,14 +69,15 @@ export default function RecordList() {
  return (
    <div>
      <h3>Record List</h3>
-     <table className="recordcontainer" style={{ marginTop: 20, width:'600px', height: '400px', backgroundColor:'pink' }}>
+     <table className="recordcontainer" style={{ marginTop: 20 }}>
        <thead>
          <tr>
-           <th>Postnumber</th>
-           <th>Title</th>
            <th>Photo</th>
+           <th>Title</th>
            <th>Date</th>
            <th>Content</th>
+           <th>Postnumber</th>
+           <th></th>
          </tr>
        </thead>
        <tbody>{recordList()}</tbody>

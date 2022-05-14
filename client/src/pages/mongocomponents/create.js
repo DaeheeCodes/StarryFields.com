@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import { DateTimePicker } from '@mui/x-date-pickers'
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers'
+import "./create.css"
 
 export default function Create() {
  const [form, setForm] = useState({
@@ -50,7 +48,7 @@ export default function Create() {
  
  // This following section will display the form that takes the input from the user.
  return (
-   <div className="container">
+   <div className="createcontainer">
      <h3>Create New Blogpost</h3>
      <form onSubmit={onSubmit}>
      <div className="formContainer">
@@ -84,14 +82,16 @@ export default function Create() {
          />
        </div>
        <div className="formContainer">
-       <LocalizationProvider dateAdapter={AdapterDateFns} htmlFor="date">
-            <DateTimePicker
-                label="DateTimePicker"
-                value={form.date}
-                onChange={(e) => updateForm({ date: e.target.value })}
-                className="formSubmitter"
-            />
-        </LocalizationProvider>
+         <label htmlFor="date">Date</label>
+         <input
+           type="date"
+           className="formSubmitter"
+           id="date"
+           value={form.date}
+           onChange={(e) => updateForm({ date: e.target.value })}
+         />
+       </div>
+       <div className="formContainer">
        </div>
        <div className="formContainer">
          <label htmlFor="content">Content</label>
@@ -114,3 +114,4 @@ export default function Create() {
    </div>
  );
 }
+

@@ -1,6 +1,5 @@
 import React from "react";
 import './admin.css';
-
 // We use Route in order to define the different routes of our application
 import { Route, Routes } from "react-router-dom";
  
@@ -9,7 +8,7 @@ import Navbar from "./mongocomponents/navbar.js";
 import RecordList from "./mongocomponents/recordList.js";
 import Edit from "./mongocomponents/edit.js";
 import Create from "./mongocomponents/create.js";
- 
+
 const Admin = () => {
  return (
    <div className="admincontainer">

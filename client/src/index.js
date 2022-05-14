@@ -29,7 +29,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route element={<OutsideSidebar />}>
-            <Route exact path="/" element={<Landing />}/>
+            <Route path="/" element={<Landing />}/>
       </Route>  
       <Route element={<InsideSidebar />} className="contents">
           <Route path="home" element={<App />} />
@@ -37,7 +37,7 @@ render(
           <Route path="devNotes" element={<Devnotes /> }/>
           <Route path="portfolio" element={<Portfolio />}/>
           <Route path="contactUs" element={<ContactUs /> }/>
-          <Route path="admin" element={<Admin /> }/>
+          <Route path="/admin/*" element={<Admin /> }/>
     </Route>
     </Routes>
   </BrowserRouter>,
