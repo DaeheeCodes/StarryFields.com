@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid'
 import './contactus.css';
 import Button from '@mui/material/Button';
 import { useState } from "react";
+import { fontWeight } from "@mui/system";
 
 const Containerlarge ={
     position: 'absolute',
@@ -32,10 +33,14 @@ const Containersmall= {
 }
 
 const Title ={
+    pt: '10px',
     fontSize: '50px',
     verticalAlign: 'middle',
     display: 'inline-block',
-    textAlign: 'center'
+    textAlign: 'center',
+    textIndent: '0px',
+    fontWeight:'bolder',
+    ml: '2%'
 }
 const Desc ={
     ml:'6%',
@@ -54,7 +59,7 @@ const Textfield ={
 
 const Buttons={
     backgroundColor: '#9a8c98',
-    color: 'black'
+    color: 'black',
 }
 
 const Logocontainer={
