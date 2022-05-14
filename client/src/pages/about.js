@@ -10,6 +10,7 @@ import TexasFlag from '../photos/texasflag.jpeg'
 import Gary from '../photos/garyfong.jpeg'
 import KoreanFlag from '../photos/koreanflag.jpeg'
 import Daehee from '../photos/daehee.jpeg'
+import Paul from '../photos/paulan.jpeg'
 import '../assets.css'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -62,37 +63,24 @@ const avatarcard={
     borderColor: '#2a9d8f'
 }
 
-const avatarcardbot={
+const avatarcardpaul={
     position: 'relative',
     width: '100px',
     height: '100px',
     zIndex: '0',
     ml: '-1%',
-    top: '-117%',
+    top: '-101%',
     boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)',
     borderStyle: 'inset',
-    borderColor: '#2a9d8f'
+    borderColor: '#b5838d'
 }
+
 
 const clippedcard={
     posittion: 'absolute',
     overflow: 'hidden',
-    width: '410px',
-    height: '23px',
-    bgcolor: 'blue',
-    zIndex: '-4',
-    clipPath: 'polygon(79% 0, 100% 0%, 100% 100%, 79% 100%)',
-    borderRadius: '48px',
-    backgroundImage: `url(${TexasFlag})`,
-    backgroundSize: 'contain',
-}
-
-const clippedcardkorean={
-    posittion: 'absolute',
-    overflow: 'hidden',
     width: '301px',
     height: '201px',
-    bgcolor: '#2a9d8f',
     //backgroundImage: `url(${KoreanFlag})`,
     zIndex: '-4',
     clipPath: 'polygon(80% 0, 100% 0%, 100% 100%, 80% 100%)',
@@ -148,7 +136,7 @@ function About () {
     <div className="gridbox">
             <Grid container spacing={0} columns={40} sx={{...container}}  >
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#2a9d8f'}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
             <Box className="jobdesc" sx={{}}>
             <p >Full Stack-</p>
@@ -175,7 +163,34 @@ function About () {
             </Box>
         </Grid>
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor:'#b5838d'}}  ></Box>
+            <Avatar elevation={5} alt="Daehee Hwang" src={`${Paul}`} sx={{...avatarcardpaul}}/>
+            <Box className="jobdesc" sx={{}}>
+            <p >Engineer</p>
+            <p >Gameplay Programmer/</p>
+            <p >Designer</p>
+            <Box className="iconcontainer">
+                <Avatar sx={{ bgcolor: '#14213d'}}>
+                    <GitHubIcon />
+                    </Avatar>
+                    <Avatar sx={{ bgcolor: '#0072b1'}}>
+                    <LinkedInIcon />
+                    </Avatar>
+                    <Avatar sx={{ bgcolor: '#f72585'}}>
+                    <EmailIcon />
+                </Avatar>
+            </Box>
+            <Box sx={{...aboutme}}>
+                <p>Started coding in April of 2022, currently looking for a job!</p>
+            </Box>
+            </Box>
+            <Box sx={{...namecontainer}}>
+                <p>Daehee Hwang</p>
+            </Box>
+            </Box>
+        </Grid>
+        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcard}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
             <Box className="jobdesc" sx={{}}>
             <p >Full Stack-</p>
@@ -202,34 +217,7 @@ function About () {
             </Box>
         </Grid>
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
-            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
-            <Box className="jobdesc" sx={{}}>
-            <p >Full Stack-</p>
-            <p >Web Developer</p>
-            <p >Site Manager</p>
-            <Box className="iconcontainer">
-                <Avatar sx={{ bgcolor: '#14213d'}}>
-                    <GitHubIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#0072b1'}}>
-                    <LinkedInIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#f72585'}}>
-                    <EmailIcon />
-                </Avatar>
-            </Box>
-            <Box sx={{...aboutme}}>
-                <p>Started coding in April of 2022, currently looking for a job!</p>
-            </Box>
-            </Box>
-            <Box sx={{...namecontainer}}>
-                <p>Daehee Hwang</p>
-            </Box>
-            </Box>
-        </Grid>
-        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcardkorean}}  ></Box>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcard}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
             <Box className="jobdesc" sx={{}}>
             <p >Full Stack-</p>

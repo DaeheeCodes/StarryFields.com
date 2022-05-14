@@ -9,7 +9,6 @@ require("dotenv").config({ path: "./config.env" });
 app.use(require("./mongoroutes/record"));
 const dbo = require("./mongodb/connections.js");
 
-/*
 var corsOptions = {
   origin: "http://localhost:3001",
   origin: "http://localhost:3000",
@@ -17,9 +16,6 @@ var corsOptions = {
   origin: "http://localhost:3000/*",
 };
 app.use(cors(corsOptions))
-*/
-app.use(cors('*'))
-
 const PORT = process.env.PORT || 3001;
 
 //app.use(cors(corsOptions));
