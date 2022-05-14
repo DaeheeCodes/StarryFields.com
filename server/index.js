@@ -10,6 +10,8 @@ app.use(require("./mongoroutes/record"));
 const dbo = require("./mongodb/connections.js");
 
 var corsOptions = {
+  credentials: true,
+  origin: true,
   origin: "http://localhost:3001",
   origin: "http://localhost:3000",
   origin: "http://localhost:3001/*",
