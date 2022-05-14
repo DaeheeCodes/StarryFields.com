@@ -60,7 +60,6 @@ const avatarcard={
     top: '-101%',
     boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)',
     borderStyle: 'inset',
-    borderColor: '#2a9d8f'
 }
 
 const avatarcardpaul={
@@ -72,7 +71,6 @@ const avatarcardpaul={
     top: '-101%',
     boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23)',
     borderStyle: 'inset',
-    borderColor: '#b5838d'
 }
 
 
@@ -136,8 +134,8 @@ function About () {
     <div className="gridbox">
             <Grid container spacing={0} columns={40} sx={{...container}}  >
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#2a9d8f'}}  ></Box>
-            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#b5838d'}}  ></Box>
+            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard, borderColor: '#b5838d'}}/>
             <Box className="jobdesc" sx={{}}>
             <p >Full Stack-</p>
             <p >Web Developer</p>
@@ -163,8 +161,8 @@ function About () {
             </Box>
         </Grid>
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor:'#b5838d'}}  ></Box>
-            <Avatar elevation={5} alt="Daehee Hwang" src={`${Paul}`} sx={{...avatarcardpaul}}/>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor:'#2a9d8f'}}  ></Box>
+            <Avatar elevation={5} alt="Daehee Hwang" src={`${Paul}`} sx={{...avatarcardpaul, borderColor: '#2a9d8f'}}/>
             <Box className="jobdesc" sx={{}}>
             <p >Engineer</p>
             <p >Gameplay Programmer/</p>
@@ -190,8 +188,8 @@ function About () {
             </Box>
         </Grid>
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcard}}  ></Box>
-            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#0096c7'}}  ></Box>
+            <Avatar elevation={5} alt="Daehee Hwang" src={`${Gary}`} sx={{...avatarcard, borderColor: '#0096c7'}}/>
             <Box className="jobdesc" sx={{}}>
             <p >Full Stack-</p>
             <p >Web Developer</p>
@@ -217,8 +215,8 @@ function About () {
             </Box>
         </Grid>
         <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcard}}  ></Box>
-            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard}}/>
+            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#fcf6bd'}}  ></Box>
+            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard, borderColor: '#fcf6bd'}}/>
             <Box className="jobdesc" sx={{}}>
             <p >Full Stack-</p>
             <p >Web Developer</p>
