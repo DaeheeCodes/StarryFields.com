@@ -1,11 +1,13 @@
 const express = require("express");
 const path = require('path');
-require('dotenv').config()
 const sendGridMail = require('@sendgrid/mail');
 const sendGridTransport = require('nodemailer-sendgrid-transport');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const app = express();
+require("dotenv").config({ path: "./config.env" });
+app.use(require("./mongoroutes/record"));
+const dbo = require("./mongodb/connections.js");
 
 var corsOptions = {
   origin: "http://localhost:3001",
@@ -35,6 +37,8 @@ app.get('*', (req, res) => {
 
 
 
+//nodemailer with sendgrid
+
 const sgMail = require('@sendgrid/mail')
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 console.log(process.env.SENDGRID_API_KEY)
@@ -62,5 +66,11 @@ console.log(process.env.SENDGRID_API_KEY)
     })
 
    app.listen(PORT, () => {
+    dbo.connectToServer(function (err) {
+      if (err) console.error(err);
+    });
     console.log(`Server listening on ${PORT}`);
   });
+
+  //mongodb connection support
+

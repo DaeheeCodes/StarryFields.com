@@ -15,6 +15,7 @@ import InsideSidebar from './InsideSidebar.js';
 import About from './pages/about.js';
 import Devnotes from './pages/devnotes.js';
 import ContactUs from './pages/contactus.js';
+import Admin from './pages/admin.js'
 
 const rootElement = document.getElementById("root")
 
@@ -36,6 +37,7 @@ render(
           <Route path="devNotes" element={<Devnotes /> }/>
           <Route path="portfolio" element={<Portfolio />}/>
           <Route path="contactUs" element={<ContactUs /> }/>
+          <Route path="admin" element={<Admin /> }/>
     </Route>
     </Routes>
   </BrowserRouter>,

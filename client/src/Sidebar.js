@@ -80,6 +80,9 @@ function Sidebar(){
                 <NavLink to="/credits" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Credits"/> <ConstructionIcon className ="icon" />
                 </NavLink>
+                <NavLink to="/admin" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
+                    <SidebarLink className="link" text="Admin"/> <ConstructionIcon className ="icon" />
+                </NavLink>
             </NavUnlisted>
     </div>
   );

@@ -153,7 +153,7 @@ function ContactUs (props) {
                             <TextField label="Message" value={mailState.message} fullWidth multiline rows={6} autocomplete="none" onChange={handleStateChange} required name="message"/>
                             </Grid>
                             </Grid>
-                                <Box><Button type="submit" sx={{...Buttons}}>SUBMIT</Button></Box>
+                                <Box><ReCAPTCHA sitekey="6LcbXNkfAAAAAMGgjYBqijekZOXdTX_odekoKyw3"/><Button type="submit" sx={{...Buttons}}>SUBMIT</Button></Box>
                         </Box>
                 </Grid>   
             </Grid>
@@ -181,4 +181,3 @@ function ContactUs (props) {
 
 export default ContactUs
 
-//<ReCAPTCHA sitekey="6LcbXNkfAAAAAMGgjYBqijekZOXdTX_odekoKyw3"/>
