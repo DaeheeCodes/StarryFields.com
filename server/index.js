@@ -10,7 +10,16 @@ app.use(require("./mongoroutes/record"));
 const dbo = require("./mongodb/connections.js");
 
 
-app.use(cors())
+var corsOptions = {
+  origin: "http://localhost:3001",
+  origin: "http://localhost:3000",
+  origin: "http://localhost:3001/*",
+  origin: "http://localhost:3000/*",
+  origin: "*",
+  origin: "https://starryfields.com/",
+};
+app.use(cors(corsOptions))
+
 const PORT = process.env.PORT || 3001;
 
 //app.use(cors(corsOptions));
@@ -73,14 +82,4 @@ console.log(process.env.SENDGRID_API_KEY)
 
   //mongodb connection support
 
-/*
-var corsOptions = {
-  origin: "http://localhost:3001",
-  origin: "http://localhost:3000",
-  origin: "http://localhost:3001/*",
-  origin: "http://localhost:3000/*",
-  origin: "*",
-  origin: "https://starryfields.com/",
-};
-app.use(cors(corsOptions))
-*/
+
