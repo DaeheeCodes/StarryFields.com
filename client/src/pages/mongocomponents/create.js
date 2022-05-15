@@ -4,11 +4,11 @@ import "./create.css"
 
 export default function Create() {
  const [form, setForm] = useState({
-   postnumber: "",
-   photo: "",
-   title: "",
-   date: "",
-   content: "",
+   postnumber: '',
+   photo: '',
+   title: '',
+   date: '',
+   content: '',
  });
  const navigate = useNavigate();
  
@@ -25,7 +25,6 @@ export default function Create() {
  
    // When a post request is sent to the create url, we'll add a new record to the database.
    const newPost = { ...form };
- 
    await fetch("/record/add", {
      method: "POST",
      headers: {
@@ -35,10 +34,12 @@ export default function Create() {
    })
    .catch(error => {
      window.alert(error);
+     console.log(error);
      return;
    });
  
-   setForm({   postnumber: "",
+   setForm({   
+  postnumber: "",
    photo: "",
    title: "",
    date: "",

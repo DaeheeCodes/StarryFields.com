@@ -9,16 +9,8 @@ require("dotenv").config({ path: "./config.env" });
 app.use(require("./mongoroutes/record"));
 const dbo = require("./mongodb/connections.js");
 
-var corsOptions = {
-  credentials: true,
-  origin: true,
-  origin: "http://localhost:3001",
-  origin: "http://localhost:3000",
-  origin: "http://localhost:3001/*",
-  origin: "http://localhost:3000/*",
-  origin: "*",
-};
-app.use(cors(corsOptions))
+
+app.use(cors())
 const PORT = process.env.PORT || 3001;
 
 //app.use(cors(corsOptions));
@@ -30,12 +22,12 @@ app.use(express.urlencoded({ extended: true }));
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-// Handle GET requests to /api route
+// Handle /api requests to /api route
 app.get("/api", (req, res) => { 
   res.json({ message: "Hello from server!" });
 });
 
-// All other GET requests not handled before will return our React app
+// All other requests not handled before will return our React app
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
@@ -70,6 +62,8 @@ console.log(process.env.SENDGRID_API_KEY)
       })
     })
 
+
+    
    app.listen(PORT, () => {
     dbo.connectToServer(function (err) {
       if (err) console.error(err);
@@ -79,3 +73,14 @@ console.log(process.env.SENDGRID_API_KEY)
 
   //mongodb connection support
 
+/*
+var corsOptions = {
+  origin: "http://localhost:3001",
+  origin: "http://localhost:3000",
+  origin: "http://localhost:3001/*",
+  origin: "http://localhost:3000/*",
+  origin: "*",
+  origin: "https://starryfields.com/",
+};
+app.use(cors(corsOptions))
+*/

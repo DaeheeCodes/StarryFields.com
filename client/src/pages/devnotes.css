@@ -1,5 +1,93 @@
-.recordcontainer {
-    width: 800px;
-    height: 800px;
-    background-color: white;
+
+
+.postWrapper{
+    display: flex;
+    margin-left: 20%;
 }
+.postInner{
+      flex-basis: 75%;
+      margin: 20px 20px 20px 0;
+}
+
+.postDescription{
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+}    
+  
+.back{
+          margin: 20px 0 20px 50px;
+          background: none;
+          border: 1px solid #7451f8;
+          padding: 0 10px 0 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 18px;
+          transition: 0.2s;
+          color: #7451f8;
+}
+.back:hover{
+    background-color: rgba(236, 232, 255, 0.63);
+}
+  
+.backIcon{
+    font-size: 30px;
+}  
+img{
+     width: inherit;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 300px;
+    object-fit: cover;
+}
+  
+.postInfo{
+    padding: 0 50px 20px 50px;
+}
+  
+.author{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+  
+.authorDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+    font-size: 14px;
+    font-weight: 600;
+}
+  
+.date{
+                font-size: 13px;
+                color: #7c7b7b;
+}
+  
+h1{
+    word-break: break-word;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+  
+.postText{
+    padding: 0 50px 20px 50px;
+}
+
+li{
+    margin-left: 17px;
+}
+ 
