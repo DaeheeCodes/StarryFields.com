@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
- 
+import axios from 'axios';
+
 const Record = (props) => (
  <tr>
    <td>{props.record.photo}</td>
@@ -27,15 +28,8 @@ export default function RecordList() {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     const response = await fetch(`http://localhost:3000/record`);
- 
-     if (!response.ok) {
-       const message = `An error occurred: ${response.statusText}`;
-       window.alert(message);
-       return;
-     }
- 
-     const records = await response.json();
+     const response = await axios(`blogpost/record`);
+     const records = response.data
      setRecords(records);
    }
  
@@ -46,9 +40,8 @@ export default function RecordList() {
  
  // This method will delete a record
  async function deleteRecord(id) {
-   await fetch(`/${id}`, {
-     method: "DELETE"
-   });
+  const response = await axios(`blogpost/delete:${id}`);
+  const records = response.data;
  
    const newRecords = records.filter((el) => el._id !== id);
    setRecords(newRecords);

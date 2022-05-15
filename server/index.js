@@ -6,19 +6,28 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const app = express();
 require("dotenv").config({ path: "./config.env" });
-app.use(require("./mongoroutes/record"));
-const dbo = require("./mongodb/connections.js");
+let mongoose = require('mongoose');
+let bodyParser = require('body-parser');
+const blogRoute = require('./mongoroutes/record.js')
+
+mongoose
+  .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+  .then((x) => {
+    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+  })
+  .catch((err) => {
+    console.error('Error connecting to mongo', err.reason)
+  })
 
 
-var corsOptions = {
-  origin: "http://localhost:3001",
-  origin: "http://localhost:3000",
-  origin: "http://localhost:3001/*",
-  origin: "http://localhost:3000/*",
-  origin: "*",
-  origin: "https://starryfields.com/",
-};
-app.use(cors(corsOptions))
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({
+      extended: true
+  }));
+
+app.use('/blogpost', blogRoute)
+
+app.use(cors('*'))
 
 const PORT = process.env.PORT || 3001;
 
@@ -73,13 +82,28 @@ console.log(process.env.SENDGRID_API_KEY)
 
 
     
-   app.listen(PORT, () => {
-    dbo.connectToServer(function (err) {
-      if (err) console.error(err);
-    });
-    console.log(`Server listening on ${PORT}`);
+const server = app.listen(PORT, () => {
+      console.log('Connected to port ' + PORT)
+  })
+  // Error Handling
+  app.use((req, res, next) => {
+      next(createError(404));
+  });
+  app.use(function (err, req, res, next) {
+      console.error(err.message);
+      if (!err.statusCode) err.statusCode = 500;
+      res.status(err.statusCode).send(err.message);
   });
 
   //mongodb connection support
 
-
+/*
+  var corsOptions = {
+    origin: "http://localhost:3001",
+    origin: "http://localhost:3000",
+    origin: "http://localhost:3001/*",
+    origin: "http://localhost:3000/*",
+    origin: "*",
+    origin: "https://starryfields.com/",
+  };
+  */

@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "./create.css"
@@ -25,25 +26,12 @@ export default function Create() {
  
    // When a post request is sent to the create url, we'll add a new record to the database.
    const newPost = { ...form };
-   await fetch("/admin/add", {
-     method: "POST",
-     mode: 'cors',
-     cache: 'no-cache',
-     credentials: 'same-origin',
-     redirect: 'follow',
-     referrerPolicy: 'no-referrer',
-     headers: {
-       "Content-Type": "application/json",
-     },
-     
-     body: JSON.stringify(newPost),
-   })
-   .then(console.log(newPost))
-   .catch(error => {
-     window.alert(error);
-     console.log(error);
-     return;
-   });
+    axios.post("../blogpost/create", {newPost}) 
+    .then((res) => {
+      console.log(res.data);
+  }).catch((error) => {
+      console.log(error)
+  });
  
    setForm({   
   postnumber: "",

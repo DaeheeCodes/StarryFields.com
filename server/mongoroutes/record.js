@@ -1,81 +1,73 @@
 const express = require("express");
- 
+const router = express.Router();
+let mongoose = require('mongoose');
 // recordRoutes is an instance of the express router.
 // We use it to define our routes.
 // The router will be added as a middleware and will take control of requests starting with path /record.
 const recordRoutes = express.Router();
  
 // This will help us connect to the database
-const dbo = require("../mongodb/connections.js");
+let blogpost = require("../mongodb/connections.js");
 // This help convert the id from string to ObjectId for the _id.
-const ObjectId = require("mongodb").ObjectId;
 
  
 // This section will help you get a list of all the records.
-recordRoutes.route("/record").get(function (req, res) {
- let db_connect = dbo.getDb("devnotes");
- db_connect
-   .collection("blogpost")
-   .find({})
-   .toArray(function (err, result) {
-     if (err) throw err;
-     console.log(result)
-     res.json(result);
-   });
-});
+router.route('/record').get((req, res) => {
+  blogpost.find((error, data) => {
+      if (error) {
+          return next(error)
+      } else {
+          res.json(data)
+      }
+  })
+})
  
 // This section will help you get a single record by id
-recordRoutes.route("/record/:id").get(function (req, res) {
- let db_connect = dbo.getDb();
- let myquery = { _id: ObjectId( req.params.id )};
- db_connect
-     .collection("blogpost")
-     .findOne(myquery, function (err, result) {
-       if (err) throw err;
-       res.json(result);
-     });
-});
- 
+router.route('/record/:id').get((req, res) => {
+  blogpost.findById(req.params.id, (error, data) => {
+      if (error) {
+          return next(error)
+      } else {
+          res.json(data)
+      }
+  })});
+
 // This section will help you create a new record.
-recordRoutes.route("/admin/add").post(function (req, response) {
- let db_connect = dbo.getDb();
- let myobj = {
-   photo: req.body.photo,
-   title: req.body.title,
-   date: req.body.date,
-   content: req.body.content,
-   postnumber: req.body.postnumber,
- };
- db_connect.collection("blogpost").insertOne(myobj, function (err, res) {
-   if (err) throw err;
-   response.json(res);
- });
+router.route('/create').post((req, res, next) => {
+  blogpost.create(req.body, (error, data) => {
+      if (error) {
+          return next(error)
+      } else {
+          console.log(data)
+          res.json(data)
+      }
+  })
 });
- 
+
 // This section will help you update a record by id.
-recordRoutes.route("/update/:id").post(function (req, response) {
- let db_connect = dbo.getDb(); 
- let myquery = { _id: ObjectId( req.params.id )}; 
- let newvalues = {   
-   $set: {     
-    photo: req.body.photo,
-    title: req.body.title,
-    date: req.body.date,
-    content: req.body.content,
-    postnumber: req.body.postnumber,
-   }, 
-  }
-});
+router.route('/update/:id').put((req, res, next) => {
+  blogpost.findByIdAndUpdate(req.params.id, {
+      $set: req.body
+  }, (error, data) => {
+      if (error) {
+          return next(error);
+          console.log(error)
+      } else {
+          res.json(data)
+          console.log('User updated successfully !')
+      }
+  })
+})
  
-// This section will help you delete a record
-recordRoutes.route("/:id").delete((req, response) => {
- let db_connect = dbo.getDb();
- let myquery = { _id: ObjectId( req.params.id )};
- db_connect.collection("blogpost").deleteOne(myquery, function (err, obj) {
-   if (err) throw err;
-   console.log("1 document deleted");
-   response.json(obj);
- });
-});
- 
-module.exports = recordRoutes;
+  router.route('/delete/:id').delete((req, res, next) => {
+    blogpost.findByIdAndRemove(req.params.id, (error, data) => {
+        if (error) {
+            return next(error);
+        } else {
+            res.status(200).json({
+                msg: data
+            })
+        }
+    })
+})
+module.exports = router;

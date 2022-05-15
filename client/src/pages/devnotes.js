@@ -1,5 +1,6 @@
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
 
 
 
@@ -36,18 +37,14 @@ export default function DevNotes() {
  
  // This method fetches the records from the database.
  useEffect(() => {
-   async function getRecords() {
-     const response = await fetch(`http://localhost:3000/record`);
- 
-     if (!response.ok) {
-       const message = `An error occurred: ${response.statusText}`;
-       window.alert(message);
-       return;
-     }
- 
-     const records = await response.json();
-     setRecords(records);
-   }
+  async function getRecords() {
+    const response = await axios(`blogpost/record`);
+    const records = response.data
+    setRecords(records);
+  }
+
+  getRecords();
+
  
    getRecords();
  

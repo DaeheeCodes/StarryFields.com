@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.47107282.css",
-    "main.js": "/static/js/main.458cd2f1.js",
+    "main.css": "/static/css/main.9eaf536d.css",
+    "main.js": "/static/js/main.352e9e63.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/background.jpg": "/static/media/background.39f2a155db47aa7d858d.jpg",
     "static/media/portbackground.jpg": "/static/media/portbackground.39f2a155db47aa7d858d.jpg",
@@ -10,13 +10,14 @@
     "static/media/garyfong.jpeg": "/static/media/garyfong.be29af31bc0d2f38ea17.jpeg",
     "static/media/texasflag.jpeg": "/static/media/texasflag.78c38aa589bed7b43e4a.jpeg",
     "static/media/koreanflag.jpeg": "/static/media/koreanflag.1fe34a97f250de01e7a2.jpeg",
+    "static/media/paulan.jpeg": "/static/media/paulan.6e590f984f5afc42f8d5.jpeg",
     "index.html": "/index.html",
-    "main.47107282.css.map": "/static/css/main.47107282.css.map",
-    "main.458cd2f1.js.map": "/static/js/main.458cd2f1.js.map",
+    "main.9eaf536d.css.map": "/static/css/main.9eaf536d.css.map",
+    "main.352e9e63.js.map": "/static/js/main.352e9e63.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.47107282.css",
-    "static/js/main.458cd2f1.js"
+    "static/css/main.9eaf536d.css",
+    "static/js/main.352e9e63.js"
   ]
 }
