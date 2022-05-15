@@ -44,3 +44,8 @@ p {
     text-indent: -30%;
     font-size: 25px;
 }
+
+
+.icons:hover {
+cursor: pointer;
+}

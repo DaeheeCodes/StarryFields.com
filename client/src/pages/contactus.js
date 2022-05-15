@@ -109,7 +109,7 @@ function ContactUs (props) {
     const submitEmail = async (e) => {
         e.preventDefault();
         console.log({mailState});
-        await fetch("http://localhost:3000/send", {
+        await fetch("/send", {
             method: 'POST',
             headers: {
                 "Content-type": "application/json",

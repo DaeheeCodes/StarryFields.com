@@ -130,6 +130,8 @@ function About () {
         <br/>,"Follow our journey here and see what we have brewing!"];
 */  
 
+
+
   return (
     <div className="gridbox">
             <Grid container spacing={0} columns={40} sx={{...container}}  >
@@ -141,13 +143,13 @@ function About () {
             <p >Web Developer</p>
             <p >Site Manager</p>
             <Box className="iconcontainer">
-                <Avatar sx={{ bgcolor: '#14213d'}}>
-                    <GitHubIcon />
+                <Avatar className='icons' sx={{ bgcolor: '#14213d'}}>
+                    <GitHubIcon sx={{ Icons, }}/>
                     </Avatar>
-                    <Avatar sx={{ bgcolor: '#0072b1'}}>
+                    <Avatar className='icons' sx={{ bgcolor: '#0072b1'}}>
                     <LinkedInIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#f72585'}}>
+                    </Avatar  >
+                    <Avatar className='icons' sx={{ bgcolor: '#f72585'}}>
                     <EmailIcon />
                 </Avatar>
             </Box>
@@ -164,17 +166,17 @@ function About () {
             <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor:'#2a9d8f'}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Paul}`} sx={{...avatarcardpaul, borderColor: '#2a9d8f'}}/>
             <Box className="jobdesc" sx={{}}>
-            <p >Engineer</p>
+            <p >Lead Engineer</p>
             <p >Gameplay Programmer/</p>
             <p >Designer</p>
             <Box className="iconcontainer">
-                <Avatar sx={{ bgcolor: '#14213d'}}>
-                    <GitHubIcon />
+                <Avatar className='icons' sx={{ bgcolor: '#14213d'}}>
+                    <GitHubIcon sx={{ Icons, }}/>
                     </Avatar>
-                    <Avatar sx={{ bgcolor: '#0072b1'}}>
+                    <Avatar className='icons' sx={{ bgcolor: '#0072b1'}}>
                     <LinkedInIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#f72585'}}>
+                    </Avatar  >
+                    <Avatar className='icons' sx={{ bgcolor: '#f72585'}}>
                     <EmailIcon />
                 </Avatar>
             </Box>
@@ -183,26 +185,29 @@ function About () {
             </Box>
             </Box>
             <Box sx={{...namecontainer}}>
-                <p>Daehee Hwang</p>
+                <p>Paul An</p>
             </Box>
             </Box>
         </Grid>
-        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
+        <Grid Grid item xl={9} lg={9} sm={0} xs={0}>
+            <p></p>
+        </Grid>
+        <Grid item xl={8} lg={8} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#0096c7'}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Gary}`} sx={{...avatarcard, borderColor: '#0096c7'}}/>
             <Box className="jobdesc" sx={{}}>
-            <p >Full Stack-</p>
-            <p >Web Developer</p>
-            <p >Site Manager</p>
+            <p >Lead Engineer</p>
+            <p >Software Development</p>
+            <p >Consultant</p>
             <Box className="iconcontainer">
-                <Avatar sx={{ bgcolor: '#14213d'}}>
-                    <GitHubIcon />
+                <Avatar className='icons' sx={{ bgcolor: '#14213d'}}>
+                    <GitHubIcon sx={{ Icons, }}/>
                     </Avatar>
-                    <Avatar sx={{ bgcolor: '#0072b1'}}>
+                    <Avatar onClick={() =>  window.open("https://www.linkedin.com/in/cspaulan/")} className='icons' sx={{ bgcolor: '#0072b1'}}>
                     <LinkedInIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#f72585'}}>
-                    <EmailIcon />
+                    </Avatar  >
+                    <Avatar onClick={() =>  navigator.clipboard.writeText('www.google.com')} className='icons' sx={{ bgcolor: '#f72585'}}>
+                    <EmailIcon onClick={() =>  alert('Email Address Copied!')}/>
                 </Avatar>
             </Box>
             <Box sx={{...aboutme}}>
@@ -210,34 +215,7 @@ function About () {
             </Box>
             </Box>
             <Box sx={{...namecontainer}}>
-                <p>Daehee Hwang</p>
-            </Box>
-            </Box>
-        </Grid>
-        <Grid item xl={14} lg={16} sm={40} xs={40} sx={{...profilecontainer,}}>
-            <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#fcf6bd'}}  ></Box>
-            <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard, borderColor: '#fcf6bd'}}/>
-            <Box className="jobdesc" sx={{}}>
-            <p >Full Stack-</p>
-            <p >Web Developer</p>
-            <p >Site Manager</p>
-            <Box className="iconcontainer">
-                <Avatar sx={{ bgcolor: '#14213d'}}>
-                    <GitHubIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#0072b1'}}>
-                    <LinkedInIcon />
-                    </Avatar>
-                    <Avatar sx={{ bgcolor: '#f72585'}}>
-                    <EmailIcon />
-                </Avatar>
-            </Box>
-            <Box sx={{...aboutme}}>
-                <p>Started coding in April of 2022, currently looking for a job!</p>
-            </Box>
-            </Box>
-            <Box sx={{...namecontainer}}>
-                <p>Daehee Hwang</p>
+                <p>Gary Fong</p>
             </Box>
             </Box>
         </Grid>
