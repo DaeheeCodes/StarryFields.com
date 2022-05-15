@@ -1,30 +1,34 @@
-import { Card } from "@mui/material";
+import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import CardMedia from '@material-ui/core/CardMedia';
+
+
 
  import './devnotes.css'
-const BlogPost = (props) => (
-  <div className={'postWrapper'}>
-                <div className={'postInner'}>
-                    <div className={'postDescription'}>
-                        <img src={`${props.record.photo}`} alt="postPicture"/>
+
+
+const BlogPost = (props) => 
+
+
+(
+  <div className={`postWrapper  ${props.record.postnumber%2 === 0 ? "collated" : ""}`}>
+                <div className={`postInner`}>
+                    <div className={'postDescription'} onClick={() => window.open(props.record.outsidelink)}>
+                    <img className="banner" src={`${props.record.photo}`} alt="postPicture"/>
                         <div className={'postInfo'}>
                             <div className={'author'}>
-                                <img src='https://images.unsplash.com/photo-1575645186854-f9e8372e0b19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80' alt="postPicture"/>
+                                <img className="avatar" src={`${props.record.avatar}`} alt="postPicture"/>
                                 <div className={'authorDetails'}>
                                     <span className={'name'}>Daehee Hwang</span>
                                     <span className={'date'}>{props.record.date}</span>
                                 </div>
                             </div>
-                            <h1>{props.record.title}</h1>
+                            <h2 className="blogtitle">{props.record.title}</h2>
                         </div>
-                        <div className={'postText'} dangerouslySetInnerHTML={{__html: (props.record.content).replace(/\n/g,"<br />")}}/>
-                        <div className={'postActionsInfo'}>
-
+                        <p className={'postText'} dangerouslySetInnerHTML={{__html: (props.record.content).replace(/\n/g,"<br />")}}/>
+                        <p className="readmore">...Read More</p>
                         </div>
                     </div>
                 </div>
-          </div>
 );
 //{post?.user?.firstName} {post.user.lastName}
 export default function DevNotes() {
@@ -49,11 +53,16 @@ export default function DevNotes() {
  
    return;
  }, [records.length]);
- 
+ const sortedPost = records.sort((a, b) => {
+  return ((b.postnumber)- (a.postnumber));
+})
+
+console.log(sortedPost)
 
  // This method will map out the records on the table
  function blogs() {
-   return records.map((record) => {
+   return sortedPost.map((record) => {
+     
      return (
        <BlogPost
          record={record}
@@ -65,7 +74,7 @@ export default function DevNotes() {
  
  // This following section will display the table with the records of individuals.
  return (
-   <div className="hello">
+   <div>
        <div>{blogs()}</div>
    </div>
  );

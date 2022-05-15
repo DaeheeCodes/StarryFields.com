@@ -63,7 +63,7 @@ function Sidebar(){
 
   return(
     <div className={'sidebar'}>
-        <h1 className="title">Starry Fields</h1>
+        <h2 className="title">Starry Fields</h2>
             <NavUnlisted > 
                 <NavLink to="/home" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact >
                     <SidebarLink className="link" text="Home" /> <HomeIcon className ="icon"  />

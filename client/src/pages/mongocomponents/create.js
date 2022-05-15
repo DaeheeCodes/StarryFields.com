@@ -25,13 +25,20 @@ export default function Create() {
  
    // When a post request is sent to the create url, we'll add a new record to the database.
    const newPost = { ...form };
-   await fetch("/record/add", {
+   await fetch("/admin/add", {
      method: "POST",
+     mode: 'cors',
+     cache: 'no-cache',
+     credentials: 'same-origin',
+     redirect: 'follow',
+     referrerPolicy: 'no-referrer',
      headers: {
        "Content-Type": "application/json",
      },
+     
      body: JSON.stringify(newPost),
    })
+   .then(console.log(newPost))
    .catch(error => {
      window.alert(error);
      console.log(error);
