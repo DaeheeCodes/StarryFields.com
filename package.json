@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm install && npm run build",
     "dev": "concurrently \"cd client && npm run start\" \"npm run start\"",
-    "cloudflare-build": "npm run build && npm run start",
+    "cloudflare-build": "npm run build && npm run start"
   },
   "keywords": [],
   "author": "",
