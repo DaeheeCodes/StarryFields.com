@@ -110,14 +110,7 @@ function ContactUs () {
     const submitEmail = async (e) => {
         e.preventDefault();
         console.log({mailState});
-        await fetch("/send", {
-            method: 'POST',
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify({mailState}),
-        })
-            .then((res)=> res.json())
+        await axios("/send") 
             .then(async (res) => {
                 const resData = await res;
                 console.log(resData);

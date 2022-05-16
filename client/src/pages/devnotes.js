@@ -1,4 +1,3 @@
-import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
@@ -53,8 +52,6 @@ export default function DevNotes() {
  const sortedPost = records.sort((a, b) => {
   return ((b.postnumber)- (a.postnumber));
 })
-
-console.log(sortedPost)
 
  // This method will map out the records on the table
  function blogs() {
