@@ -9,9 +9,21 @@ require("dotenv").config({ path: "./config.env" });
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 const blogRoute = require('./mongoroutes/record.js')
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*'); // to enable calls from every domain 
+  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE'); // allowed actiosn
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); 
+
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200); // to deal with chrome sending an extra options request
+  }
+
+  next(); // call next middlewer in line
+});
+
 
 mongoose
-  .connect('mongodb+srv://readonly:readonly@cluster0.6wqee.mongodb.net/devnotes?retryWrites=true&w=majority', { useNewUrlParser: true })
+  .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -27,7 +39,10 @@ mongoose
 
 app.use('/blogpost', blogRoute)
 
-app.use(cors('*'))
+app.use(cors({
+  credentials:true,
+  origin: ['*']
+}));
 
 const PORT = process.env.PORT || 3001;
 
@@ -55,7 +70,7 @@ app.get('*', (req, res) => {
 //nodemailer with sendgrid
 
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey('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')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 console.log(process.env.SENDGRID_API_KEY)
    
    app.post("/send", function (req, res) {

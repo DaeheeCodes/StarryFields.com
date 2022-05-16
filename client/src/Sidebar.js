@@ -11,7 +11,8 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import HomeIcon from '@mui/icons-material/Home';import {useState} from "react";
 import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
-
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import Admin from "./pages/admin";
 //transcription bug where some css components dont get inheritted. using style component for readability rather than in-line.
 
 const NavUnlisted = styled.ul `
@@ -68,11 +69,11 @@ function Sidebar(){
                 <NavLink to="/home" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact >
                     <SidebarLink className="link" text="Home" /> <HomeIcon className ="icon"  />
                 </NavLink>
-                <NavLink to="/about" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
-                    <SidebarLink className="link" text="About Us"/> <GroupIcon className ="icon" />
-                </NavLink>
                 <NavLink to="/devNotes" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Dev Notes" /> <LibraryBooksIcon className ="icon" />
+                </NavLink>
+                <NavLink to="/about" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
+                    <SidebarLink className="link" text="About Us"/> <GroupIcon className ="icon" />
                 </NavLink>
                 <NavLink to="/contactUs" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Contact Us" /> <DraftsIcon className ="icon" />
@@ -81,7 +82,7 @@ function Sidebar(){
                     <SidebarLink className="link" text="Credits"/> <ConstructionIcon className ="icon" />
                 </NavLink>
                 <NavLink to="/admin" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
-                    <SidebarLink className="link" text="Admin"/> <ConstructionIcon className ="icon" />
+                    <SidebarLink className="link" text="Admin"/> <AdminPanelSettingsIcon className ="icon" />
                 </NavLink>
             </NavUnlisted>
     </div>

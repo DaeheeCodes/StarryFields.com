@@ -33,8 +33,8 @@ render(
       </Route>  
       <Route element={<InsideSidebar />} className="contents">
           <Route path="home" element={<App />} />
-          <Route path="about" element={<About />}/>
           <Route path="devNotes" element={<Devnotes /> }/>
+          <Route path="about" element={<About />}/>
           <Route path="portfolio" element={<Portfolio />}/>
           <Route path="contactUs" element={<ContactUs /> }/>
           <Route path="/admin/*" element={<Admin /> }/>

@@ -24,7 +24,7 @@ const container={
     mt: '3%',
     ml: '17%',
     display: 'flex',
-    width: '75vw',
+    width: '100vw',
     height: '100vh',
     overflow: 'hidden',
 }
@@ -135,7 +135,7 @@ function About () {
   return (
     <div className="gridbox">
             <Grid container spacing={0} columns={40} sx={{...container}}  >
-        <Grid item xl={20} lg={20} sm={40} xs={40} sx={{...profilecontainer,}}>
+        <Grid item xl={13} lg={20} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#b5838d'}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Daehee}`} sx={{...avatarcard, borderColor: '#b5838d'}}/>
             <Box className="jobdesc" sx={{}}>
@@ -162,7 +162,7 @@ function About () {
             </Box>
             </Box>
         </Grid>
-        <Grid item xl={20} lg={20} sm={40} xs={40} sx={{...profilecontainer,}}>
+        <Grid item xl={13} lg={20} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor:'#2a9d8f'}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Paul}`} sx={{...avatarcardpaul, borderColor: '#2a9d8f'}}/>
             <Box className="jobdesc" sx={{}}>
@@ -189,10 +189,10 @@ function About () {
             </Box>
             </Box>
         </Grid>
-        <Grid Grid item xl={8} lg={8} sm={0} xs={0}>
+        <Grid Grid item xl={0} lg={10} sm={0} xs={0}>
             <p></p>
         </Grid>
-        <Grid item xl={22} lg={22} sm={40} xs={40} sx={{...profilecontainer,}}>
+        <Grid item xl={13} lg={30} sm={40} xs={40} sx={{...profilecontainer,}}>
             <Box sx={{...profilecard}}> <Box sx={{...clippedcard, bgcolor: '#0096c7'}}  ></Box>
             <Avatar elevation={5} alt="Daehee Hwang" src={`${Gary}`} sx={{...avatarcard, borderColor: '#0096c7'}}/>
             <Box className="jobdesc" sx={{}}>
