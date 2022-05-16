@@ -8,8 +8,7 @@ const app = express();
 require('dotenv').config()
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
-const compression = require('compression');
-app.use(compression())
+
 
 const blogRoute = require('./mongoroutes/record.js')
 app.use(bodyParser.json());
