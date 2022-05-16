@@ -1,0 +1,27 @@
+@font-face {
+        font-family: universe;
+        src: url(./fonts/universe.ttf);
+    }
+
+@font-face {
+        font-family: street;
+        src: url(./fonts/YdestreetB.ttf);
+    }   
+
+.footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 1.5vh;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        z-index: 2000;
+}
+
+.footertext {
+        margin-top: .1%;
+        font-size: 1vh;
+        font-family: 'street';
+}

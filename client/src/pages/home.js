@@ -29,14 +29,14 @@ const vidcontainer ={
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '15px', 
-    fontFamily: "streetBold",
+    fontFamily: "street",
 }
 
 
 const textbody = {
     mt: '5%',
     mb: '7%',
-    fontFamily: "star",
+    fontFamily: "street",
     color: '#efd9ce',
 }
 

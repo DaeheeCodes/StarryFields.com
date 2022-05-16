@@ -2,12 +2,15 @@
     font-family: star;
     src: url(starfont.ttf);
 }
-
+@font-face {
+    font-family: street;
+    src: url(../fonts/YdestreetB.ttf);
+}   
 
 
 .gridbox {
     color: #ccad67;
-    font-family: star;
+    font-family: 'street';
     overflow-x: hidden;
     overflow-y: auto;
     height: 100%;

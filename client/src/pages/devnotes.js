@@ -71,7 +71,7 @@ console.log(sortedPost)
  
  // This following section will display the table with the records of individuals.
  return (
-   <div style={{ maxHeight: '120vh', overflowY:'auto'}}>
+   <div style={{ maxHeight: '100vh', overflowY:'auto'}}>
        <div>{blogs()}</div>
    </div>
  );

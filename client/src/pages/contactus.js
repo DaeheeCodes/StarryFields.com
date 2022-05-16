@@ -7,6 +7,7 @@ import './contactus.css';
 import Button from '@mui/material/Button';
 import { useState } from "react";
 import { fontWeight } from "@mui/system";
+import axios from "axios";
 
 const Containerlarge ={
     position: 'absolute',
@@ -78,7 +79,7 @@ const Logobox={
 
 
 
-function ContactUs (props) {
+function ContactUs () {
 
     const [mailState, setMailState] = useState ({
         name: '',
