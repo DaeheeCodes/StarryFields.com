@@ -29,7 +29,7 @@ export default function RecordList() {
  useEffect(() => {
    async function getRecords() {
      const response = await axios(`blogpost/record`);
-     const records = response.data
+     const records = Array.from(response.data)
      setRecords(records);
    }
  
