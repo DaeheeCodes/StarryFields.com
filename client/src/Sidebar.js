@@ -13,6 +13,7 @@ import HomeIcon from '@mui/icons-material/Home';import {useState} from "react";
 import CompareArrowsRoundedIcon from '@mui/icons-material/CompareArrowsRounded';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import Admin from "./pages/admin";
+import Credits from "./pages/credits";
 //transcription bug where some css components dont get inheritted. using style component for readability rather than in-line.
 
 const NavUnlisted = styled.ul `

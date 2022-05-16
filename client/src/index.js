@@ -16,7 +16,7 @@ import About from './pages/about.js';
 import Devnotes from './pages/devnotes.js';
 import ContactUs from './pages/contactus.js';
 import Admin from './pages/admin.js'
-
+import Credits from './pages/credits';
 const rootElement = document.getElementById("root")
 
 /* 
@@ -37,6 +37,7 @@ render(
           <Route path="about" element={<About />}/>
           <Route path="portfolio" element={<Portfolio />}/>
           <Route path="contactUs" element={<ContactUs /> }/>
+          <Route path="credits" element={<Credits /> }/>
           <Route path="/admin/*" element={<Admin /> }/>
     </Route>
     </Routes>

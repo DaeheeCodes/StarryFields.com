@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 
 mongoose
-  .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+  .connect('mongodb+srv://readonly:readonly@cluster0.6wqee.mongodb.net/devnotes?retryWrites=true&w=majority', { useNewUrlParser: true })
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -66,7 +66,7 @@ app.get('*', (req, res) => {
 //nodemailer with sendgrid
 
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+sgMail.setApiKey('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')
 console.log(process.env.SENDGRID_API_KEY)
    
    app.post("/send", function (req, res) {
