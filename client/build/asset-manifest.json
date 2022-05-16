@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.18b81e62.css",
-    "main.js": "/static/js/main.c48a5de0.js",
+    "main.css": "/static/css/main.571c475a.css",
+    "main.js": "/static/js/main.2003b023.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/universe.ttf": "/static/media/universe.a3b22d16b1cca8526908.ttf",
     "static/media/background.jpg": "/static/media/background.39f2a155db47aa7d858d.jpg",
     "static/media/portbackground.jpg": "/static/media/portbackground.39f2a155db47aa7d858d.jpg",
     "static/media/YdestreetB.ttf": "/static/media/YdestreetB.7cd4dbaca5e9a6c014a6.ttf",
+    "static/media/YdestreetL.ttf": "/static/media/YdestreetL.27ce8e0e1628b57c4c72.ttf",
     "static/media/starfont.ttf": "/static/media/starfont.256b621b0992de36f63f.ttf",
     "static/media/repet.ttf": "/static/media/repet.8fca36f348caef859417.ttf",
     "static/media/garyfong.jpeg": "/static/media/garyfong.be29af31bc0d2f38ea17.jpeg",
@@ -14,12 +15,12 @@
     "static/media/koreanflag.jpeg": "/static/media/koreanflag.1fe34a97f250de01e7a2.jpeg",
     "static/media/paulan.jpeg": "/static/media/paulan.6e590f984f5afc42f8d5.jpeg",
     "index.html": "/index.html",
-    "main.18b81e62.css.map": "/static/css/main.18b81e62.css.map",
-    "main.c48a5de0.js.map": "/static/js/main.c48a5de0.js.map",
+    "main.571c475a.css.map": "/static/css/main.571c475a.css.map",
+    "main.2003b023.js.map": "/static/js/main.2003b023.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18b81e62.css",
-    "static/js/main.c48a5de0.js"
+    "static/css/main.571c475a.css",
+    "static/js/main.2003b023.js"
   ]
 }

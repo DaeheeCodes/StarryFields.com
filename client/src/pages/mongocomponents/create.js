@@ -25,8 +25,8 @@ export default function Create() {
    e.preventDefault();
  
    // When a post request is sent to the create url, we'll add a new record to the database.
-   const newPost = { ...form };
-   console.log(...form)
+   const newPost = { form };
+   console.log( form)
     axios.post("/blogpost/create", newPost) 
     .then((res) => {
       console.log(res.data);

@@ -1,3 +1,5 @@
+@import url(../assets.css);
+
 .creditscontainer {
     float: left;
     position: relative;
@@ -17,4 +19,13 @@
     font-size: clamp(20px, 40px, 3vw);
     font-weight: bolder;
     text-align: center;
+}
+
+.sectionheader {
+    font-size: clamp(17px, 25px, 2vw);
+    font-weight: bold;
+}
+
+.stackgrid {
+    margin-left: 5px;
 }

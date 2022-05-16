@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+var flash = require('connect-flash');
 let mongoose = require('mongoose');
 // recordRoutes is an instance of the express router.
 // We use it to define our routes.
@@ -11,7 +12,7 @@ let blogpost = require("../mongodb/connections.js");
 
  
 // This section will help you get a list of all the records.
-router.route('/record').get((req, res) => {
+router.route('/').get((req, res) => {
   blogpost.find((error, data) => {
       if (error) {
           return next(error)
@@ -22,7 +23,7 @@ router.route('/record').get((req, res) => {
 })
  
 // This section will help you get a single record by id
-router.route('/record/:id').get((req, res) => {
+router.route('/edit/:id').get((req, res) => {
   blogpost.findById(req.params.id, (error, data) => {
       if (error) {
           return next(error)

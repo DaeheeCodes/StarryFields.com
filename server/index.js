@@ -5,14 +5,13 @@ const sendGridTransport = require('nodemailer-sendgrid-transport');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const app = express();
-require("dotenv").config({ path: "./config.env" });
+require('dotenv').config()
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 const compression = require('compression');
 app.use(compression())
 
 const blogRoute = require('./mongoroutes/record.js')
-mongoose.Promise = global.Promise;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -35,7 +34,8 @@ app.use((req, res, next) => {
 
 
 mongoose
-  .connect('mongodb+srv://readonly:readonly@cluster0.6wqee.mongodb.net/devnotes?retryWrites=true&w=majority', { useNewUrlParser: true })
+  .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+  
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

@@ -37,8 +37,8 @@ export default function DevNotes() {
  // This method fetches the records from the database.
  useEffect(() => {
   async function getRecords() {
-    const response = await axios(`/blogpost/record/`);
-    const records = Array.from(response.data)
+    const response = await axios.get(`/blogpost`);
+    const records = response.data
     setRecords(records);
   }
 
