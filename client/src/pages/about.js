@@ -144,14 +144,14 @@ function About () {
             <p >Web Developer</p>
             <p >Site Manager</p>
             <Box className="iconcontainer">
-                <Avatar className='icons' sx={{ bgcolor: '#14213d'}}>
+            <Avatar onClick={() =>  window.open("https://github.com/DaeheeCodes")} className='icons' sx={{ bgcolor: '#14213d'}}>
                     <GitHubIcon sx={{ Icons, }}/>
                     </Avatar>
-                    <Avatar className='icons' sx={{ bgcolor: '#0072b1'}}>
+                    <Avatar onClick={() =>  window.open("https://linkedin.com/in/DaeheeCodes")} className='icons' sx={{ bgcolor: '#0072b1'}}>
                     <LinkedInIcon />
                     </Avatar  >
-                    <Avatar className='icons' sx={{ bgcolor: '#f72585'}}>
-                    <EmailIcon />
+                    <Avatar onClick={() =>  navigator.clipboard.writeText('DaeheeCodes@gmail.com')} className='icons' sx={{ bgcolor: '#f72585'}}>
+                    <EmailIcon onClick={() =>  alert('Email Address Copied!')}/>
                 </Avatar>
             </Box>
             <Box sx={{...aboutme}}>
@@ -171,14 +171,14 @@ function About () {
             <p >Gameplay Programmer/</p>
             <p >Designer</p>
             <Box className="iconcontainer">
-                <Avatar className='icons' sx={{ bgcolor: '#14213d'}}>
+                 <Avatar onClick={() =>  window.open("https://github.com/paulan94")} className='icons' sx={{ bgcolor: '#14213d'}}>
                     <GitHubIcon sx={{ Icons, }}/>
                     </Avatar>
-                    <Avatar className='icons' sx={{ bgcolor: '#0072b1'}}>
+                    <Avatar onClick={() =>  window.open("https://www.linkedin.com/in/cspaulan/")} className='icons' sx={{ bgcolor: '#0072b1'}}>
                     <LinkedInIcon />
                     </Avatar  >
-                    <Avatar className='icons' sx={{ bgcolor: '#f72585'}}>
-                    <EmailIcon />
+                    <Avatar onClick={() =>  navigator.clipboard.writeText('www.google.com')} className='icons' sx={{ bgcolor: '#f72585'}}>
+                    <EmailIcon onClick={() =>  alert('Email Address Copied!')}/>
                 </Avatar>
             </Box>
             <Box sx={{...aboutme}}>
@@ -201,10 +201,10 @@ function About () {
             <p >Software Development</p>
             <p >Consultant</p>
             <Box className="iconcontainer">
-                <Avatar className='icons' sx={{ bgcolor: '#14213d'}}>
+                <Avatar onClick={() =>  window.open("https://github.com/swimgod")} className='icons' sx={{ bgcolor: '#14213d'}}>
                     <GitHubIcon sx={{ Icons, }}/>
                     </Avatar>
-                    <Avatar onClick={() =>  window.open("https://www.linkedin.com/in/cspaulan/")} className='icons' sx={{ bgcolor: '#0072b1'}}>
+                    <Avatar onClick={() =>  window.open("https://www.linkedin.com/in/gary-j-fong/")} className='icons' sx={{ bgcolor: '#0072b1'}}>
                     <LinkedInIcon />
                     </Avatar  >
                     <Avatar onClick={() =>  navigator.clipboard.writeText('www.google.com')} className='icons' sx={{ bgcolor: '#f72585'}}>

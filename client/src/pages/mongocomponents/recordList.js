@@ -28,7 +28,7 @@ export default function RecordList() {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     const response = await axios(`blogpost/record`);
+     const response = await axios(`/blogpost/record`);
      const records = Array.from(response.data)
      setRecords(records);
    }
@@ -40,7 +40,7 @@ export default function RecordList() {
  
  // This method will delete a record
  async function deleteRecord(id) {
-  const response = await axios(`blogpost/delete:${id}`);
+  const response = await axios(`/blogpost/delete:${id}`);
   const records = response.data;
  
    const newRecords = records.filter((el) => el._id !== id);

@@ -11,7 +11,7 @@ let blogpost = require("../mongodb/connections.js");
 
  
 // This section will help you get a list of all the records.
-router.route('/blogpost/record').get((req, res) => {
+router.route('/record').get((req, res) => {
   blogpost.find((error, data) => {
       if (error) {
           return next(error)
@@ -22,7 +22,7 @@ router.route('/blogpost/record').get((req, res) => {
 })
  
 // This section will help you get a single record by id
-router.route('/blogpost/record/:id').get((req, res) => {
+router.route('/record/:id').get((req, res) => {
   blogpost.findById(req.params.id, (error, data) => {
       if (error) {
           return next(error)
@@ -32,7 +32,7 @@ router.route('/blogpost/record/:id').get((req, res) => {
   })});
 
 // This section will help you create a new record.
-router.route('/blogpost/create').post((req, res, next) => {
+router.route('/create').post((req, res, next) => {
   blogpost.create(req.body, (error, data) => {
       if (error) {
           return next(error)
@@ -44,7 +44,7 @@ router.route('/blogpost/create').post((req, res, next) => {
 });
 
 // This section will help you update a record by id.
-router.route('/blogpost/update/:id').put((req, res, next) => {
+router.route('/update/:id').put((req, res, next) => {
   blogpost.findByIdAndUpdate(req.params.id, {
       $set: req.body
   }, (error, data) => {
@@ -58,7 +58,7 @@ router.route('/blogpost/update/:id').put((req, res, next) => {
   })
 })
  
-  router.route('/blogpost/delete/:id').delete((req, res, next) => {
+  router.route('/delete/:id').delete((req, res, next) => {
     blogpost.findByIdAndRemove(req.params.id, (error, data) => {
         if (error) {
             return next(error);
