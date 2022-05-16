@@ -97,7 +97,7 @@ console.log(process.env.SENDGRID_API_KEY)
 
 
     
-const server = app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
       console.log('Connected to port ' + PORT)
   })
   // Error Handling
