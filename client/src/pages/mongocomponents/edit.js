@@ -56,7 +56,7 @@ export default function Edit() {
    };
  
    // This will send a post request to update the data in the database.
-   await fetch(`/update/${params.id}`, {
+   await fetch(`/blogpost/update/${params.id}`, {
      method: "POST",
      body: JSON.stringify(editedPost),
      headers: {
