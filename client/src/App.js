@@ -3,9 +3,6 @@ import "./App.css";
 import Home from "./pages/home";
 /*
 left the boilerplate useEffect just in case
-*/
-
-function App() {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
@@ -13,6 +10,9 @@ function App() {
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
+*/
+
+function App() {
 
   return (
     <div className="background">
