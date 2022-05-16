@@ -80,7 +80,7 @@ function Sidebar(){
                 </NavLink>
                 <NavLink to="/credits" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Credits"/> <ConstructionIcon className ="icon" />
-                </NavLink>
+                </NavLink>s
                 <NavLink to="/admin" style={{ textDecoration: 'none' , color: 'beige'}} activeClassName="current" exact>
                     <SidebarLink className="link" text="Admin"/> <AdminPanelSettingsIcon className ="icon" />
                 </NavLink>
