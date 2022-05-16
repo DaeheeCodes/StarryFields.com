@@ -1,6 +1,14 @@
 .creditscontainer {
+    float: left;
+    position: relative;
     height: 98vh;
-    width: 98vw;
-    border-radius: 20px;
-    background-color: white;
+    width: 82vw;
+    border-radius: 30px;
+    background-color: #f2f5f6;
+    margin-left: 12%;
+    margin-top: 3%;
+}
+
+.creditsgrid {
+    margin-top: 1%;
 }

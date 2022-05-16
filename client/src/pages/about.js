@@ -84,6 +84,7 @@ const clippedcard={
     clipPath: 'polygon(80% 0, 100% 0%, 100% 100%, 80% 100%)',
     borderRadius: '48px',
     backgroundSize: 'contain',
+    mt: '-.9%',
 }
 
 const clippedcardtexan={
