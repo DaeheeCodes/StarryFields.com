@@ -8,10 +8,14 @@ const app = express();
 require("dotenv").config({ path: "./config.env" });
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
-const blogRoute = require('./mongoroutes/record.js')
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }));
+const blogRoute = require('./mongoroutes/record.js')
+mongoose.Promise = global.Promise;
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(cors());
 app.use('/blogpost', blogRoute)
 
 
@@ -39,10 +43,6 @@ mongoose
 
 
 
-app.use(cors({
-  credentials:true,
-  origin: ['*']
-}));
 
 const PORT = process.env.PORT || 3001;
 app.set("port", PORT)
@@ -92,19 +92,21 @@ console.log(process.env.SENDGRID_API_KEY)
     })
 
 
+    const port = process.env.PORT || 3001;
+    const server = app.listen(port, () => {
+        console.log('Connected to port ' + port)
+    })
     
-app.listen(process.env.PORT || 3001, () => {
-      console.log('Connected to port ' + PORT)
-  })
-  // Error Handling
-  app.use((req, res, next) => {
-      next(createError(404));
-  });
-  app.use(function (err, req, res, next) {
-      console.error(err.message);
-      if (!err.statusCode) err.statusCode = 500;
-      res.status(err.statusCode).send(err.message);
-  });
+    // Error Handling
+    app.use((req, res, next) => {
+        next(createError(404));
+    });
+    
+    app.use(function (err, req, res, next) {
+        console.error(err.message);
+        if (!err.statusCode) err.statusCode = 500;
+        res.status(err.statusCode).send(err.message);
+    });
 
   //mongodb connection support
 

@@ -12,3 +12,9 @@
 .creditsgrid {
     margin-top: 1%;
 }
+
+.creditstitle {
+    font-size: clamp(20px, 40px, 3vw);
+    font-weight: bolder;
+    text-align: center;
+}
