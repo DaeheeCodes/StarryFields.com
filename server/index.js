@@ -9,6 +9,12 @@ require("dotenv").config({ path: "./config.env" });
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 const blogRoute = require('./mongoroutes/record.js')
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+app.use('/blogpost', blogRoute)
+
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'); // to enable calls from every domain 
   res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE'); // allowed actiosn
@@ -32,12 +38,6 @@ mongoose
   })
 
 
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({
-      extended: true
-  }));
-
-app.use('/blogpost', blogRoute)
 
 app.use(cors({
   credentials:true,
@@ -45,11 +45,7 @@ app.use(cors({
 }));
 
 const PORT = process.env.PORT || 3001;
-
-//app.use(cors(corsOptions));
-//parse option for mailer and mongo
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }));
+app.set("port", PORT)
 
 
 // Have Node serve the files for our built React app
